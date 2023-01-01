@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>DataAccessLayer</id>
+    <version>1.0.0</version>
+    <authors>DataAccessLayer</authors>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework="net5.0">
+        <dependency id="EntityLayer" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="SharedLayer" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="EFCore.BulkExtensions" version="5.4.2" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.Identity" version="2.2.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.Identity.EntityFrameworkCore" version="5.0.13" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.EntityFrameworkCore" version="5.0.13" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.EntityFrameworkCore.SqlServer" version="5.0.13" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Identity.Stores" version="5.0.13" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\berato\Documents\GitHub\WarehouseWeb\DataAccessLayer\bin\Release\net5.0\DataAccessLayer.runtimeconfig.json" target="lib\net5.0\DataAccessLayer.runtimeconfig.json" />
+    <file src="C:\Users\berato\Documents\GitHub\WarehouseWeb\DataAccessLayer\bin\Release\net5.0\DataAccessLayer.dll" target="lib\net5.0\DataAccessLayer.dll" />
+  </files>
+</package>

@@ -1,0 +1,120 @@
+C:\Users\berato\source\repos\EntityLayer\DataAccessLayer\bin\Debug\net5.0\DataAccessLayer.deps.json
+C:\Users\berato\source\repos\EntityLayer\DataAccessLayer\bin\Debug\net5.0\DataAccessLayer.runtimeconfig.json
+C:\Users\berato\source\repos\EntityLayer\DataAccessLayer\bin\Debug\net5.0\DataAccessLayer.runtimeconfig.dev.json
+C:\Users\berato\source\repos\EntityLayer\DataAccessLayer\bin\Debug\net5.0\DataAccessLayer.dll
+C:\Users\berato\source\repos\EntityLayer\DataAccessLayer\bin\Debug\net5.0\ref\DataAccessLayer.dll
+C:\Users\berato\source\repos\EntityLayer\DataAccessLayer\bin\Debug\net5.0\DataAccessLayer.pdb
+C:\Users\berato\source\repos\EntityLayer\DataAccessLayer\bin\Debug\net5.0\EntityLayer.dll
+C:\Users\berato\source\repos\EntityLayer\DataAccessLayer\bin\Debug\net5.0\SharedLayer.dll
+C:\Users\berato\source\repos\EntityLayer\DataAccessLayer\bin\Debug\net5.0\EntityLayer.pdb
+C:\Users\berato\source\repos\EntityLayer\DataAccessLayer\bin\Debug\net5.0\SharedLayer.pdb
+C:\Users\berato\source\repos\EntityLayer\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\berato\source\repos\EntityLayer\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\berato\source\repos\EntityLayer\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\berato\source\repos\EntityLayer\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.AssemblyInfo.cs
+C:\Users\berato\source\repos\EntityLayer\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\berato\source\repos\EntityLayer\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.csproj.CopyComplete
+C:\Users\berato\source\repos\EntityLayer\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.dll
+C:\Users\berato\source\repos\EntityLayer\DataAccessLayer\obj\Debug\net5.0\ref\DataAccessLayer.dll
+C:\Users\berato\source\repos\EntityLayer\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.pdb
+C:\Users\berato\source\repos\EntityLayer\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.genruntimeconfig.cache
+C:\Users\ramazankac\Documents\GitHub\WarehouseWeb\DataAccessLayer\bin\Debug\net5.0\DataAccessLayer.deps.json
+C:\Users\ramazankac\Documents\GitHub\WarehouseWeb\DataAccessLayer\bin\Debug\net5.0\DataAccessLayer.runtimeconfig.json
+C:\Users\ramazankac\Documents\GitHub\WarehouseWeb\DataAccessLayer\bin\Debug\net5.0\DataAccessLayer.runtimeconfig.dev.json
+C:\Users\ramazankac\Documents\GitHub\WarehouseWeb\DataAccessLayer\bin\Debug\net5.0\DataAccessLayer.dll
+C:\Users\ramazankac\Documents\GitHub\WarehouseWeb\DataAccessLayer\bin\Debug\net5.0\ref\DataAccessLayer.dll
+C:\Users\ramazankac\Documents\GitHub\WarehouseWeb\DataAccessLayer\bin\Debug\net5.0\DataAccessLayer.pdb
+C:\Users\ramazankac\Documents\GitHub\WarehouseWeb\DataAccessLayer\bin\Debug\net5.0\EntityLayer.dll
+C:\Users\ramazankac\Documents\GitHub\WarehouseWeb\DataAccessLayer\bin\Debug\net5.0\SharedLayer.dll
+C:\Users\ramazankac\Documents\GitHub\WarehouseWeb\DataAccessLayer\bin\Debug\net5.0\EntityLayer.pdb
+C:\Users\ramazankac\Documents\GitHub\WarehouseWeb\DataAccessLayer\bin\Debug\net5.0\SharedLayer.pdb
+C:\Users\ramazankac\Documents\GitHub\WarehouseWeb\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\ramazankac\Documents\GitHub\WarehouseWeb\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ramazankac\Documents\GitHub\WarehouseWeb\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\ramazankac\Documents\GitHub\WarehouseWeb\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.AssemblyInfo.cs
+C:\Users\ramazankac\Documents\GitHub\WarehouseWeb\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\ramazankac\Documents\GitHub\WarehouseWeb\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.csproj.CopyComplete
+C:\Users\ramazankac\Documents\GitHub\WarehouseWeb\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.dll
+C:\Users\ramazankac\Documents\GitHub\WarehouseWeb\DataAccessLayer\obj\Debug\net5.0\ref\DataAccessLayer.dll
+C:\Users\ramazankac\Documents\GitHub\WarehouseWeb\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.pdb
+C:\Users\ramazankac\Documents\GitHub\WarehouseWeb\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.genruntimeconfig.cache
+C:\Users\tugayo\Documents\GitHub\WarehouseWeb\DataAccessLayer\bin\Debug\net5.0\DataAccessLayer.deps.json
+C:\Users\tugayo\Documents\GitHub\WarehouseWeb\DataAccessLayer\bin\Debug\net5.0\DataAccessLayer.runtimeconfig.json
+C:\Users\tugayo\Documents\GitHub\WarehouseWeb\DataAccessLayer\bin\Debug\net5.0\DataAccessLayer.runtimeconfig.dev.json
+C:\Users\tugayo\Documents\GitHub\WarehouseWeb\DataAccessLayer\bin\Debug\net5.0\DataAccessLayer.dll
+C:\Users\tugayo\Documents\GitHub\WarehouseWeb\DataAccessLayer\bin\Debug\net5.0\ref\DataAccessLayer.dll
+C:\Users\tugayo\Documents\GitHub\WarehouseWeb\DataAccessLayer\bin\Debug\net5.0\DataAccessLayer.pdb
+C:\Users\tugayo\Documents\GitHub\WarehouseWeb\DataAccessLayer\bin\Debug\net5.0\EntityLayer.dll
+C:\Users\tugayo\Documents\GitHub\WarehouseWeb\DataAccessLayer\bin\Debug\net5.0\SharedLayer.dll
+C:\Users\tugayo\Documents\GitHub\WarehouseWeb\DataAccessLayer\bin\Debug\net5.0\EntityLayer.pdb
+C:\Users\tugayo\Documents\GitHub\WarehouseWeb\DataAccessLayer\bin\Debug\net5.0\SharedLayer.pdb
+C:\Users\tugayo\Documents\GitHub\WarehouseWeb\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.csprojAssemblyReference.cache
+C:\Users\tugayo\Documents\GitHub\WarehouseWeb\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tugayo\Documents\GitHub\WarehouseWeb\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\tugayo\Documents\GitHub\WarehouseWeb\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.AssemblyInfo.cs
+C:\Users\tugayo\Documents\GitHub\WarehouseWeb\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\tugayo\Documents\GitHub\WarehouseWeb\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.csproj.CopyComplete
+C:\Users\tugayo\Documents\GitHub\WarehouseWeb\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.dll
+C:\Users\tugayo\Documents\GitHub\WarehouseWeb\DataAccessLayer\obj\Debug\net5.0\ref\DataAccessLayer.dll
+C:\Users\tugayo\Documents\GitHub\WarehouseWeb\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.pdb
+C:\Users\tugayo\Documents\GitHub\WarehouseWeb\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.genruntimeconfig.cache
+C:\Users\tugayo\Desktop\WarehouseWeb\DataAccessLayer\bin\Debug\net5.0\DataAccessLayer.deps.json
+C:\Users\tugayo\Desktop\WarehouseWeb\DataAccessLayer\bin\Debug\net5.0\DataAccessLayer.runtimeconfig.json
+C:\Users\tugayo\Desktop\WarehouseWeb\DataAccessLayer\bin\Debug\net5.0\DataAccessLayer.runtimeconfig.dev.json
+C:\Users\tugayo\Desktop\WarehouseWeb\DataAccessLayer\bin\Debug\net5.0\DataAccessLayer.dll
+C:\Users\tugayo\Desktop\WarehouseWeb\DataAccessLayer\bin\Debug\net5.0\ref\DataAccessLayer.dll
+C:\Users\tugayo\Desktop\WarehouseWeb\DataAccessLayer\bin\Debug\net5.0\DataAccessLayer.pdb
+C:\Users\tugayo\Desktop\WarehouseWeb\DataAccessLayer\bin\Debug\net5.0\EntityLayer.dll
+C:\Users\tugayo\Desktop\WarehouseWeb\DataAccessLayer\bin\Debug\net5.0\SharedLayer.dll
+C:\Users\tugayo\Desktop\WarehouseWeb\DataAccessLayer\bin\Debug\net5.0\EntityLayer.pdb
+C:\Users\tugayo\Desktop\WarehouseWeb\DataAccessLayer\bin\Debug\net5.0\SharedLayer.pdb
+C:\Users\tugayo\Desktop\WarehouseWeb\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.csprojAssemblyReference.cache
+C:\Users\tugayo\Desktop\WarehouseWeb\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tugayo\Desktop\WarehouseWeb\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\tugayo\Desktop\WarehouseWeb\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.AssemblyInfo.cs
+C:\Users\tugayo\Desktop\WarehouseWeb\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\tugayo\Desktop\WarehouseWeb\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.csproj.CopyComplete
+C:\Users\tugayo\Desktop\WarehouseWeb\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.dll
+C:\Users\tugayo\Desktop\WarehouseWeb\DataAccessLayer\obj\Debug\net5.0\ref\DataAccessLayer.dll
+C:\Users\tugayo\Desktop\WarehouseWeb\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.pdb
+C:\Users\tugayo\Desktop\WarehouseWeb\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.genruntimeconfig.cache
+C:\Users\mehmetyen\Desktop\WarehouseWeb\DataAccessLayer\bin\Debug\net5.0\DataAccessLayer.deps.json
+C:\Users\mehmetyen\Desktop\WarehouseWeb\DataAccessLayer\bin\Debug\net5.0\DataAccessLayer.runtimeconfig.json
+C:\Users\mehmetyen\Desktop\WarehouseWeb\DataAccessLayer\bin\Debug\net5.0\DataAccessLayer.runtimeconfig.dev.json
+C:\Users\mehmetyen\Desktop\WarehouseWeb\DataAccessLayer\bin\Debug\net5.0\DataAccessLayer.dll
+C:\Users\mehmetyen\Desktop\WarehouseWeb\DataAccessLayer\bin\Debug\net5.0\ref\DataAccessLayer.dll
+C:\Users\mehmetyen\Desktop\WarehouseWeb\DataAccessLayer\bin\Debug\net5.0\DataAccessLayer.pdb
+C:\Users\mehmetyen\Desktop\WarehouseWeb\DataAccessLayer\bin\Debug\net5.0\EntityLayer.dll
+C:\Users\mehmetyen\Desktop\WarehouseWeb\DataAccessLayer\bin\Debug\net5.0\SharedLayer.dll
+C:\Users\mehmetyen\Desktop\WarehouseWeb\DataAccessLayer\bin\Debug\net5.0\EntityLayer.pdb
+C:\Users\mehmetyen\Desktop\WarehouseWeb\DataAccessLayer\bin\Debug\net5.0\SharedLayer.pdb
+C:\Users\mehmetyen\Desktop\WarehouseWeb\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.csprojAssemblyReference.cache
+C:\Users\mehmetyen\Desktop\WarehouseWeb\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mehmetyen\Desktop\WarehouseWeb\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\mehmetyen\Desktop\WarehouseWeb\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.AssemblyInfo.cs
+C:\Users\mehmetyen\Desktop\WarehouseWeb\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\mehmetyen\Desktop\WarehouseWeb\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.csproj.CopyComplete
+C:\Users\mehmetyen\Desktop\WarehouseWeb\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.dll
+C:\Users\mehmetyen\Desktop\WarehouseWeb\DataAccessLayer\obj\Debug\net5.0\ref\DataAccessLayer.dll
+C:\Users\mehmetyen\Desktop\WarehouseWeb\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.pdb
+C:\Users\mehmetyen\Desktop\WarehouseWeb\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.genruntimeconfig.cache
+C:\Users\mehmetyen\Desktop\WarehouseWeb - Mehmet Githup\DataAccessLayer\bin\Debug\net5.0\DataAccessLayer.deps.json
+C:\Users\mehmetyen\Desktop\WarehouseWeb - Mehmet Githup\DataAccessLayer\bin\Debug\net5.0\DataAccessLayer.runtimeconfig.json
+C:\Users\mehmetyen\Desktop\WarehouseWeb - Mehmet Githup\DataAccessLayer\bin\Debug\net5.0\DataAccessLayer.runtimeconfig.dev.json
+C:\Users\mehmetyen\Desktop\WarehouseWeb - Mehmet Githup\DataAccessLayer\bin\Debug\net5.0\DataAccessLayer.dll
+C:\Users\mehmetyen\Desktop\WarehouseWeb - Mehmet Githup\DataAccessLayer\bin\Debug\net5.0\ref\DataAccessLayer.dll
+C:\Users\mehmetyen\Desktop\WarehouseWeb - Mehmet Githup\DataAccessLayer\bin\Debug\net5.0\DataAccessLayer.pdb
+C:\Users\mehmetyen\Desktop\WarehouseWeb - Mehmet Githup\DataAccessLayer\bin\Debug\net5.0\EntityLayer.dll
+C:\Users\mehmetyen\Desktop\WarehouseWeb - Mehmet Githup\DataAccessLayer\bin\Debug\net5.0\SharedLayer.dll
+C:\Users\mehmetyen\Desktop\WarehouseWeb - Mehmet Githup\DataAccessLayer\bin\Debug\net5.0\EntityLayer.pdb
+C:\Users\mehmetyen\Desktop\WarehouseWeb - Mehmet Githup\DataAccessLayer\bin\Debug\net5.0\SharedLayer.pdb
+C:\Users\mehmetyen\Desktop\WarehouseWeb - Mehmet Githup\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.csprojAssemblyReference.cache
+C:\Users\mehmetyen\Desktop\WarehouseWeb - Mehmet Githup\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mehmetyen\Desktop\WarehouseWeb - Mehmet Githup\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\mehmetyen\Desktop\WarehouseWeb - Mehmet Githup\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.AssemblyInfo.cs
+C:\Users\mehmetyen\Desktop\WarehouseWeb - Mehmet Githup\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\mehmetyen\Desktop\WarehouseWeb - Mehmet Githup\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.csproj.CopyComplete
+C:\Users\mehmetyen\Desktop\WarehouseWeb - Mehmet Githup\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.dll
+C:\Users\mehmetyen\Desktop\WarehouseWeb - Mehmet Githup\DataAccessLayer\obj\Debug\net5.0\ref\DataAccessLayer.dll
+C:\Users\mehmetyen\Desktop\WarehouseWeb - Mehmet Githup\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.pdb
+C:\Users\mehmetyen\Desktop\WarehouseWeb - Mehmet Githup\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.genruntimeconfig.cache

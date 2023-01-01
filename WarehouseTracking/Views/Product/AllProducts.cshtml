@@ -1,0 +1,219 @@
+﻿
+@model ProductListDto
+@*<script src="~/js/moment.js"></script>*@
+<script src="~/js/excel-bootstrap-table-filter-bundle.min.js"></script>
+@*<script src="~/js/deneme2.js"></script>*@
+<link href="~/css/excel-bootstrap-table-filter-style.css" rel="stylesheet" />
+<div class="main-content">
+    <div class="section__content section__content--p30">
+        <div class="container-fluid">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="overview-wrap">
+                            <h2 class="title-1">Tüm Ürünler</h2>
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <a id="export" name="export" class="btn  btn-success">
+                                    <span class="fa fa-file-excel fa-lg" style="color:white;"> </span> <i style="color:white">Excel</i>
+                                </a>
+                            }
+
+                        </div>
+                    </div>
+                </div>
+                <br />
+                @*<div class="row">
+                        <div class=" col-md-12">
+                            <div class="table-responsive table--no-card">
+                                <input type="search" class="form-control light-table-filter" data-table="table table-borderless table-striped table-earning" placeholder="Hızlı Arama" />
+                            </div>
+                        </div>
+                    </div>*@
+            </div>
+            @if (Model.Products.Count > 0)
+            {
+                int i = 1;
+                <div class="col-lg-12">
+                    <div class="table-responsive table--no-card m-b-40">
+                        <table class="table table-borderless table-striped table-earning" id="table">
+                            <thead>
+                                <tr>
+                                    <th class="text-center filter">Sıralama</th>
+                                    <th class="text-center filter">SAP Kodu</th>
+                                    <th class="text-center filter">Marka</th>
+                                    <th class="text-center filter">Malzeme Tanımı</th>
+                                    <th class="text-center filter">Stok</th>
+                                    <th class="text-center filter">Fiyat</th>
+                                    <th class="text-center filter">Raf</th>
+                                    <th class="text-center filter">Raf Numarası</th>
+                                    @if (User.IsInRole("Admin") || User.IsInRole("User"))
+                                    {
+                                        <th class="text-center">Araçlar</th>
+                                    }
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.Products)
+                                {
+                                    string color = "#FFFFFF";
+                                    string textColor = "";
+
+                                    if (((item.Stock - item.CriticalStock) <= 0))
+                                    {
+                                        color = "#FF4018";
+                                        textColor = "#FFFFFF";
+                                    }
+
+                                    <tr style="background-color: @color;">
+                                        <td class="text-center" style="color:@textColor">@(i++)</td>
+                                        <td class="text-center" style="color:@textColor"><a href="/ProductLog/Index/@item.Id">@item.Code</a></td>
+                                        <td class="text-center" style="color:@textColor">@item.Brand.Name</td>
+                                        <td class="text-center" style="color:@textColor">@item.Name</td>
+                                        <td class="text-center" style="color:@textColor">
+                                            @item.Stock @if (item.Unit != null)
+                                            {@item.Unit.Name;
+                                        }
+                                        </td>
+                                        <td class="text-center" style="color:@textColor">@item.Price @item.Currency.Name</td>
+                                        <td class="text-center" style="color:@textColor">@item.SubShelf.Shelf.Name</td>
+                                        <td class="text-center" style="color:@textColor">@item.SubShelf.Number</td>
+                                        @if (User.IsInRole("Admin"))
+                                        {
+                                            <td class="text-center">
+                                                <a class="btn btn-primary" onclick="editProduct(@item.Id)">
+                                                    <i class="zmdi zmdi-edit" style="color:White"></i>
+                                                </a>
+                                                <a onclick="askDelete(@item.Id)" class="btn btn-danger">
+                                                    <i class="zmdi zmdi-delete" style="color:White"></i>
+                                                </a>
+                                            </td>
+                                        }
+                                        @if (User.IsInRole("User"))
+                                        {
+                                            <td class="text-center">
+                                                <a class="btn-block btn-primary" onclick="addToBasket(@item.Id)">
+                                                    <i class="zmdi zmdi-shopping-cart-add" style="color:White"></i>
+                                                </a>
+                                            </td>
+                                        }
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <center><i>Bu kategoride ürün bulunamadı!</i></center>
+            }
+
+        </div>
+    </div>
+</div>
+<div id="editProductModalPage"></div>
+<script>
+    $(document).ready(function () {
+        $("#export").click(function () {
+            var url = '@Url.Action("ExportExcel")';
+        window.open(url);
+        });
+    });
+
+
+    $('#table').excelTableFilter({
+        columnSelector: '.filter',    // (optional) if present, will only select <th> with specified class
+        sort: true,                         // (optional) default true
+        search: true                    // (optional) default { a_to_z: 'A to Z', z_to_a: 'Z to A', search: 'Search', select_all: 'Select All' }
+    });
+     //=======================
+    var productId = 0;
+    function editProduct(productId) {
+        $.ajax({
+            url: '/Product/Edit/?Id=' + productId,
+            success: function (data) {
+                $('#editProductModalPage').html(data);
+                $('#editProductModal').modal('show');
+            }
+        });
+    }
+    // ===================
+    function askDelete(id) {
+        Swal.fire({
+            title: 'Silmek istediğinize emin misiniz?',
+            text: "Silme işlemi geri alınamaz!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            cancelButtonText: 'Vazgeç',
+            confirmButtonText: 'Evet, sil!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    type: "POST",
+                    url: "/Product/Delete/" + id,
+                    success: function (result) {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Başarıyla silinmiştir!',
+                            showConfirmButton: false,
+                            timer: 800
+                        }).then(() => {
+                            location.reload();
+                        })
+
+                    },
+                    error: function (data) {
+                    }
+                });
+            }
+        })
+    }
+    // ==========================
+    function addToBasket(productId) {
+        $.ajax({
+            url: '/Basket/Add?productId=' + productId,
+            type: "POST",
+            success: function (result) {
+                if (result == "done") {
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: 'Başarıyla sepete eklenmiştir!',
+                        showConfirmButton: false,
+                        timer: 800
+                    }).then(() => {
+                    })
+                } else if (result == "exist") {
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'warning',
+                        title: 'Bu ürün zaten sepetinizde!',
+                        showConfirmButton: false,
+                        timer: 800
+                    }).then(() => {
+                    })
+                }
+                else {
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'danger',
+                        title: 'Ürün sepete eklenirken bir hata oluştu!',
+                        showConfirmButton: false,
+                        timer: 800
+                    }).then(() => {
+                    })
+                }
+
+            }
+        });
+    }
+        //==============================================================================
+
+
+
+</script>
+

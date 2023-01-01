@@ -1,0 +1,264 @@
+﻿@model BasketListDto
+<link href="~/css/basket.css" rel="stylesheet" />
+<div class="main-content">
+    <div class="section__content section__content--p30">
+        <div class="container-fluid">
+            <div class="container py-5 h-100">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-12">
+                        <div class="card card-registration card-registration-2" style="border-radius: 15px;">
+                            <div class="card-body p-0">
+                                <div class="row g-0">
+                                    <div class="col-lg-8">
+                                        <div class="p-5">
+                                            <div class="d-flex justify-content-between align-items-center mb-5">
+                                                <h1 class="fw-bold mb-0 text-black">Sepetim</h1>
+                                                <h6 class="mb-0 text-muted">@Model.Baskets.Count ürün</h6>
+                                            </div>
+                                            <hr class="my-4">
+                                            @foreach (var item in Model.Baskets)
+                                            {
+                                                <div class="row mb-4 d-flex justify-content-between align-items-center">
+                                                    <div class="col-md-2 col-lg-2 col-xl-2">
+                                                        <img src="https://cdn-icons-png.flaticon.com/512/1547/1547183.png"
+                                                             class="img-fluid rounded-3" alt="@item.Product.Name">
+                                                    </div>
+                                                    <div class="col-md-3 col-lg-3 col-xl-3">
+                                                        <h6 class="text-muted">@item.Product.Name</h6>
+                                                        <h6 class="text-black mb-0">@item.Product.Brand.Name</h6>
+                                                    </div>
+                                                    <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+                                                        <button class="btn btn-link px-2"
+                                                                onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                                                            <i class="fas fa-minus"></i>
+                                                        </button>
+                                                        @{ string id = "form" + item.ProductId.ToString();}
+                                                        <input id="@id" min="1" max="@item.Product.Stock" name="quantity" value="@item.Quantity" type="number"
+                                                               onKeyDown="return false" class="form-control form-control-sm" style="width:70px" />
+
+                                                        <button class="btn btn-link px-2"
+                                                                onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                                                            <i class="fas fa-plus"></i>
+                                                        </button>
+                                                        <a class="btn btn-primary zmdi zmdi-refresh-alt" onclick="updateProduct(@item.ProductId)" style="color:white"></a>
+                                                    </div>
+                                                    <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                                                        <h6 class="mb-0">
+                                                            Stok:  @item.Product.Stock @if (item.Product.Unit != null)
+                                                            {@item.Product.Unit.Name;
+                                                        }
+                                                        </h6>
+                                                    </div>
+                                                    <div class="col-md-1 col-lg-1 col-xl-1 text-end">
+                                                        <a onclick="deleteProduct(@item.ProductId, @item.AppUserId)" class="text-muted"><i class="fas fa-times"></i></a>
+                                                    </div>
+                                                </div>
+                                            }
+                                            <hr class="my-4">
+
+                                            <div class="pt-5">
+                                                <h6 class="mb-0">
+                                                    <a href="#!" class="text-body">
+                                                        <i class="fas fa-long-arrow-alt-left me-2"></i> Geri Dön
+                                                    </a>
+                                                </h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 bg-grey">
+                                        <div class="p-5">
+                                            <h3 class="fw-bold mb-5 mt-2 pt-1">Bilgiler</h3>
+                                            <hr class="my-4">
+
+
+                                            <h5 class="text-uppercase mb-3">Sipariş Açıklaması</h5>
+
+                                            <div class="mb-5">
+                                                <div class=" row">
+                                                    <div class="col-md-4">
+                                                        <h5 class="text-uppercase mb-3" style="margin-top:13px;">Fabrika : </h5>
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <select name="select" id="factory" class="form-control" required>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class=" row">
+                                                    <div class="col-md-4">
+                                                        <h5 class="text-uppercase mb-3" style="margin-top:13px;">Proje : </h5>
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <select name="select" id="project" class="form-control" required>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-outline">
+                                                    <input required type="text" id="form3Examplea2" class="form-control form-control-lg" />
+                                                </div>
+                                            </div>
+
+                                            <hr class="my-4">
+                                            @{
+                                                int totalCount = 0;
+                                                foreach (var item in Model.Baskets)
+                                                {
+                                                    totalCount += item.Quantity;
+                                                }
+                                            }
+                                            <div class="d-flex justify-content-between mb-5">
+                                                <h5 class="text-uppercase">Toplam Adet</h5>
+                                                <h5>@totalCount Adt.</h5>
+                                            </div>
+                                            <button type="button" class="btn btn-dark btn-block btn-lg"
+                                                    data-mdb-ripple-color="dark" onclick="addOrder()">
+                                                Sipariş Ver
+                                            </button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+    $(document).ready(function () {
+        getFactories();
+        $('#factory').on("change", function () {
+            getProjects();
+        })
+    });
+
+    // ===========================
+    function deleteProduct(productId, userId) {
+        $.ajax({
+            url: '/Basket/Delete?productId=' + productId + '&userId=' + userId,
+            type: "POST",
+            success: function () {
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Başarıyla sepetten silinmiştir!',
+                    showConfirmButton: false,
+                    timer: 800
+                }).then(() => {
+                    location.reload();
+                })
+            }
+        });
+    }
+    // ============================
+    function updateProduct(productId) {
+        var formId = "#form" + productId;
+        $.ajax({
+            url: '/Basket/Edit',
+            type: "POST",
+            data: {
+                'Quantity': $(formId).val(),
+                'ProductId': productId,
+            },
+            success: function () {
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Adet başarıyla güncellenmiştir!',
+                    showConfirmButton: false,
+                    timer: 800
+                }).then(() => {
+                    location.reload();
+                })
+            }
+        });
+    }
+    
+    function addOrder() {  
+        var factory = $("#factory option:selected").text().toUpperCase();
+        var project = $("#project option:selected").text().toUpperCase();
+        var item = factory + " " + " " + project + " " + document.getElementById("form3Examplea2").value;        
+        var countBasket = @Model.Baskets.Count;
+        if (countBasket > 0) {
+                Swal.fire({
+                    title: 'Sipariş onaylıyor musunuz?',
+                    text: "Sipariş ancak yetkili tarafından iptal edilebilir!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#d33',
+                    cancelButtonColor: '#3085d6',
+                    cancelButtonText: 'Vazgeç',
+                    confirmButtonText: 'Evet, ver!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $.ajax({
+                            url: '/Order/Add',
+                            type: "POST",
+                            data: {
+                                'Note': item,
+                            },
+                            success: function () {
+                                $.ajax({
+                                    url: '/Order/Receipt/',
+                                    method: "GET",
+                                    contentType: "application/json",
+                                    dataType: "html",
+                                    success: function (data) {
+                                        var printWindow = window.open('', '', 'height=1024,width=768');
+                                        var divContents = data;
+                                        printWindow.document.write(divContents);
+                                        printWindow.document.close();
+                                        printWindow.print();
+                                        printWindow.close();
+                                        window.location.reload();
+                                    }
+                                });
+                            }
+                        });
+                    }
+                })
+            }
+        else {
+            Swal.fire({
+                position: 'center',
+                icon: 'error',
+                title: 'Sepette ürün yok!',
+                showConfirmButton: false,
+                timer: 800
+            }).then(() => {
+            })
+        }
+    }
+    //===========================
+    function getProjects() {
+        $.ajax({
+            type: "GET",
+            url: "/Project/GetByFactoryId?factoryId=" + $("#factory").val(),
+            success: function (data) {
+                $('#project').empty();
+                for (var i = 0; i < data.projects.$values.length; i++) {
+                    var select = document.getElementById("project");
+                    select.appendChild(new Option(data.projects.$values[i].name, data.projects.$values[i].id));
+                }
+            }
+        });
+    }
+    //==============================
+    function getFactories() {
+        $.ajax({
+            type: "GET",
+            url: "/Factory/GetAll",
+            data: "{}",
+            success: function (data) {
+                var s = '';
+                for (var i = 0; i < data.factories.$values.length; i++) {
+                    s += '<option value="' + data.factories.$values[i].id + '">' + data.factories.$values[i].name + '</option>';
+                }
+                $("#factory").html(s);
+                getProjects();
+            }
+        });
+    }
+</script>

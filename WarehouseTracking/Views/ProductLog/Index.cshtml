@@ -1,0 +1,61 @@
+﻿@model ProductLogListDto
+<div class="main-content">
+    <div class="section__content section__content--p30">
+        <div class="container-fluid">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-11"></div>
+                    <div class="col-md-1">
+                        @if (Model.ProductLogs.Count > 0)
+                        {
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <a href="/ProductLog/ExportExcel/@Model.ProductLogs[0].ProductId" id="export" name="export" class="btn btn-block btn-success">
+                                    <span class="fa fa-file-excel fa-lg" style="color:white;"></span> <i style="color:white">Excel</i>
+                                </a>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+            <br />
+            @if (Model.ProductLogs.Count > 0)
+            {
+                <div class="col-lg-12">
+                    <div class="table-responsive table--no-card m-b-40">
+                        <table class="table table-borderless table-striped table-earning">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">Ürün İsmi</th>
+                                    <th class="text-center">Ürün Sap Kodu</th>
+                                    <th class="text-center">İşlem Öncesi Stok</th>
+                                    <th class="text-center">İşlem Sonrası Stok</th>
+                                    <th class="text-center">İşlem Yapılan Stok Değeri</th>
+                                    <th class="text-center">Tarih</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.ProductLogs)
+                                {
+                                    <tr>
+                                        <td class="text-center">@item.Product.Name</td>
+                                        <td class="text-center">@item.Product.Code</td>
+                                        <td class="text-center">@item.FirstQuantity @item.Product.Unit.Name </td>
+                                        <td class="text-center">@item.LastQuantity @item.Product.Unit.Name</td>
+                                        <td class="text-center">@{ @(item.LastQuantity - item.FirstQuantity)} @item.Product.Unit.Name</td>
+                                        <td class="text-center">@item.CreatedDate</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <center><i>Ürün Geçmişi bulunamadı.</i></center>
+            }
+
+        </div>
+    </div>
+</div>

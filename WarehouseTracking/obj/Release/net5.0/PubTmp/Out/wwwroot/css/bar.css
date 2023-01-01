@@ -1,0 +1,28 @@
+﻿.container {
+    width: 100%;
+    margin: auto;
+}
+
+.bar--outer {
+    margin: auto;
+    height: 25px;
+    background-color: #00000040;
+    border-radius: 15px;
+    padding: 0 0.75rem;
+    display: grid;
+    box-sizing: border-box;
+}
+
+.bar--inner {
+    width: 0;
+    height: 50%;
+    background-color: mediumpurple;
+    margin: auto 0;
+    border-radius: 1rem;
+    animation: bar--inner 2s;
+}
+@keyframes bar--inner {
+    0% {
+        width: 0;
+    }
+}

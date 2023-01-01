@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Users\berato\Desktop\publishcore</_PublishTargetUrl>
+    <History>True|2022-04-25T08:18:38.5100363Z;True|2022-04-15T16:20:05.0280545+03:00;True|2022-04-11T14:18:58.9548466+03:00;</History>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,1861 @@
+﻿<div class="main-content">
+    <div class="section__content section__content--p30">
+        <div class="container-fluid">
+            <br />
+            @* Category Card *@
+            <div class="card">
+                <div class="card-header">
+                    <center><strong class="card-title">Kategori Düzenleme</strong></center>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong class="card-title">Kategori</strong>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <select name="select" id="category" class="form-control" required>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col-xl-4">
+                                                    <center>
+                                                        <a style="color:white" onclick="addCategory()" class="btn btn-block btn-success">
+                                                            <i class="zmdi zmdi-plus"> </i>&nbsp; Ekle
+                                                        </a>
+                                                    </center>
+                                                </div>
+                                                <div class="col-xl-4">
+                                                    <center>
+                                                        <a style="color:white" onclick="editCategory()" class="btn btn-block btn-warning">
+                                                            <i class="zmdi zmdi-edit"> </i>&nbsp; Düzenle
+                                                        </a>
+                                                    </center>
+                                                </div>
+                                                <div class="col-xl-4">
+                                                    <center>
+                                                        <a style="color:white" onclick="deleteCategory()" class="btn btn-block btn-danger">
+                                                            <i class="zmdi zmdi-delete"> </i>&nbsp; Sil
+                                                        </a>
+                                                    </center>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong class="card-title">Alt Kategori</strong>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <select name="select" id="subCategory" class="form-control" required>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col-xl-4">
+                                                    <center>
+                                                        <a style="color:white" onclick="addSubCategory()" class="btn btn-block btn-success">
+                                                            <i class="zmdi zmdi-plus"> </i>&nbsp; Ekle
+                                                        </a>
+                                                    </center>
+                                                </div>
+                                                <div class="col-xl-4">
+                                                    <center>
+                                                        <a style="color:white" onclick="editSubCategory()" class="btn btn-block btn-warning">
+                                                            <i class="zmdi zmdi-edit"> </i>&nbsp; Düzenle
+                                                        </a>
+                                                    </center>
+                                                </div>
+                                                <div class="col-xl-4">
+                                                    <center>
+                                                        <a style="color:white" onclick="deleteSubCategory()" class="btn btn-block btn-danger">
+                                                            <i class="zmdi zmdi-delete"> </i>&nbsp; Sil
+                                                        </a>
+                                                    </center>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @* Shelf Card *@
+            <div class="card">
+                <div class="card-header">
+                    <center><strong class="card-title">Raf Düzenleme</strong></center>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong class="card-title">Raf</strong>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <select name="select" id="shelf" class="form-control" required>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col-xl-4">
+                                                    <center>
+                                                        <a style="color:white" onclick="addShelf()" class="btn btn-block btn-success">
+                                                            <i class="zmdi zmdi-plus"> </i>&nbsp; Ekle
+                                                        </a>
+                                                    </center>
+                                                </div>
+                                                <div class="col-xl-4">
+                                                    <center>
+                                                        <a style="color:white" onclick="editShelf()" class="btn btn-block btn-warning">
+                                                            <i class="zmdi zmdi-edit"> </i>&nbsp; Düzenle
+                                                        </a>
+                                                    </center>
+                                                </div>
+                                                <div class="col-xl-4">
+                                                    <center>
+                                                        <a style="color:white" onclick="deleteShelf()" class="btn btn-block btn-danger">
+                                                            <i class="zmdi zmdi-delete"> </i>&nbsp; Sil
+                                                        </a>
+                                                    </center>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong class="card-title">Raf Numarası</strong>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <select name="select" id="subShelf" class="form-control" required>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col-xl-4">
+                                                    <center>
+                                                        <a style="color:white" onclick="addSubShelf()" class="btn btn-block btn-success">
+                                                            <i class="zmdi zmdi-plus"> </i>&nbsp; Ekle
+                                                        </a>
+                                                    </center>
+                                                </div>
+                                                <div class="col-xl-4">
+                                                    <center>
+                                                        <a style="color:white" onclick="editSubShelf()" class="btn btn-block btn-warning">
+                                                            <i class="zmdi zmdi-edit"> </i>&nbsp; Düzenle
+                                                        </a>
+                                                    </center>
+                                                </div>
+                                                <div class="col-xl-4">
+                                                    <center>
+                                                        <a style="color:white" onclick="deleteSubShelf()" class="btn btn-block btn-danger">
+                                                            <i class="zmdi zmdi-delete"> </i>&nbsp; Sil
+                                                        </a>
+                                                    </center>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @* Currency & Brand Card & Unit Card *@
+            <div class="card">
+                <div class="card-header">
+                    <center><strong class="card-title">Marka ve Para Birimi Düzenleme</strong></center>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong class="card-title">Marka</strong>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <select name="select" id="brand" class="form-control" required>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col-xl-4">
+                                                    <center>
+                                                        <a style="color:white" onclick="addBrand()" class="btn btn-block btn-success">
+                                                            <i class="zmdi zmdi-plus"> </i>&nbsp; Ekle
+                                                        </a>
+                                                    </center>
+                                                </div>
+                                                <div class="col-xl-4">
+                                                    <center>
+                                                        <a style="color:white" onclick="editBrand()" class="btn btn-block btn-warning">
+                                                            <i class="zmdi zmdi-edit"> </i>&nbsp; Düzenle
+                                                        </a>
+                                                    </center>
+                                                </div>
+                                                <div class="col-xl-4">
+                                                    <center>
+                                                        <a style="color:white" onclick="deleteBrand()" class="btn btn-block btn-danger">
+                                                            <i class="zmdi zmdi-delete"> </i>&nbsp; Sil
+                                                        </a>
+                                                    </center>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong class="card-title">Para Birimi</strong>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <select name="select" id="currency" class="form-control" required>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col-xl-4">
+                                                    <center>
+                                                        <a style="color:white" onclick="addCurrency()" class="btn btn-block btn-success">
+                                                            <i class="zmdi zmdi-plus"> </i>&nbsp; Ekle
+                                                        </a>
+                                                    </center>
+                                                </div>
+                                                <div class="col-xl-4">
+                                                    <center>
+                                                        <a style="color:white" onclick="editCurrency()" class="btn btn-block btn-warning">
+                                                            <i class="zmdi zmdi-edit"> </i>&nbsp; Düzenle
+                                                        </a>
+                                                    </center>
+                                                </div>
+                                                <div class="col-xl-4">
+                                                    <center>
+                                                        <a style="color:white" onclick="deleteCurrency()" class="btn btn-block btn-danger">
+                                                            <i class="zmdi zmdi-delete"> </i>&nbsp; Sil
+                                                        </a>
+                                                    </center>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong class="card-title">Ürün Birimleri</strong>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <select name="select" id="unit" class="form-control" required>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col-xl-4">
+                                                    <center>
+                                                        <a style="color:white" onclick="addUnit()" class="btn btn-block btn-success">
+                                                            <i class="zmdi zmdi-plus"> </i>&nbsp; Ekle
+                                                        </a>
+                                                    </center>
+                                                </div>
+                                                <div class="col-xl-4">
+                                                    <center>
+                                                        <a style="color:white" onclick="editUnit()" class="btn btn-block btn-warning">
+                                                            <i class="zmdi zmdi-edit"> </i>&nbsp; Düzenle
+                                                        </a>
+                                                    </center>
+                                                </div>
+                                                <div class="col-xl-4">
+                                                    <center>
+                                                        <a style="color:white" onclick="deleteUnit()" class="btn btn-block btn-danger">
+                                                            <i class="zmdi zmdi-delete"> </i>&nbsp; Sil
+                                                        </a>
+                                                    </center>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @* Factory & Project Card *@
+            <div class="card">
+                <div class="card-header">
+                    <center><strong class="card-title">Fabrika ve Proje Düzenleme</strong></center>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong class="card-title">Fabrika</strong>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <select name="select" id="factory" class="form-control" required>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col-xl-4">
+                                                    <center>
+                                                        <a style="color:white" onclick="addFactory()" class="btn btn-block btn-success">
+                                                            <i class="zmdi zmdi-plus"> </i>&nbsp; Ekle
+                                                        </a>
+                                                    </center>
+                                                </div>
+                                                <div class="col-xl-4">
+                                                    <center>
+                                                        <a style="color:white" onclick="editFactory()" class="btn btn-block btn-warning">
+                                                            <i class="zmdi zmdi-edit"> </i>&nbsp; Düzenle
+                                                        </a>
+                                                    </center>
+                                                </div>
+                                                <div class="col-xl-4">
+                                                    <center>
+                                                        <a style="color:white" onclick="deleteFactory()" class="btn btn-block btn-danger">
+                                                            <i class="zmdi zmdi-delete"> </i>&nbsp; Sil
+                                                        </a>
+                                                    </center>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong class="card-title">Proje</strong>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <select name="select" id="project" class="form-control" required>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col-xl-4">
+                                                    <center>
+                                                        <a style="color:white" onclick="addProject()" class="btn btn-block btn-success">
+                                                            <i class="zmdi zmdi-plus"> </i>&nbsp; Ekle
+                                                        </a>
+                                                    </center>
+                                                </div>
+                                                <div class="col-xl-4">
+                                                    <center>
+                                                        <a style="color:white" onclick="editProject()" class="btn btn-block btn-warning">
+                                                            <i class="zmdi zmdi-edit"> </i>&nbsp; Düzenle
+                                                        </a>
+                                                    </center>
+                                                </div>
+                                                <div class="col-xl-4">
+                                                    <center>
+                                                        <a style="color:white" onclick="deleteProject()" class="btn btn-block btn-danger">
+                                                            <i class="zmdi zmdi-delete"> </i>&nbsp; Sil
+                                                        </a>
+                                                    </center>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        getCategories();
+        getShelf();
+        getBrand();
+        getUnit();
+        getCurrency();
+        getFactories();
+
+        $('#factory').on("change", function () {
+            getProjects();
+        })
+
+        $('#category').on("change", function () {
+            getSubCategories();
+        })
+
+        $('#shelf').on("change", function () {
+            getSubShelf();
+        })
+
+    });
+    // ===============================
+    // category
+    // ===============================
+    function addCategory() {
+        var name = '';
+        Swal.fire({
+            title: 'Kategori adını giriniz!',
+            input: 'text',
+            inputAttributes: {
+                autocapitalize: 'off'
+            },
+            showCancelButton: true,
+            cancelButtonText: 'Vazgeç',
+            confirmButtonText: 'Ekle',
+            showLoaderOnConfirm: true,
+            preConfirm: (login) => {
+                if (login != '') {
+                    name = login;
+                }
+                else {
+                    Swal.showValidationMessage(
+                        `İsim alanı boş bırakılamaz!`
+                    )
+                }
+            },
+            allowOutsideClick: () => !Swal.isLoading()
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    url: '/Category/Add/',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        'Name': name,
+                    },
+                    success: function (data) {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Başarıyla eklenmiştir!',
+                            showConfirmButton: false,
+                            timer: 800
+                        }).then(() => {
+                            location.reload();
+                        })
+                    },
+                    error: function (data) {
+                    }
+                });
+            }
+        })
+    }
+    // ===============================
+    function getCategories() {
+        $.ajax({
+            type: "GET",
+            url: "/Category/GetAll",
+            data: "{}",
+            success: function (data) {
+                var s = '';
+                for (var i = 0; i < data.categories.$values.length; i++) {
+                    s += '<option value="' + data.categories.$values[i].id + '">' + data.categories.$values[i].name + '</option>';
+                }
+                $("#category").html(s);
+                getSubCategories();
+            }
+        });
+    }
+    // ===============================
+    function deleteCategory() {
+        var id = $("#category").val();
+        console.log(id);
+        Swal.fire({
+            title: 'Silmek istediğinize emin misiniz?',
+            text: "Silme işlemi geri alınamaz! Bu kategoriye ait tüm ürünler silinecektir!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            cancelButtonText: 'Vazgeç',
+            confirmButtonText: 'Evet, sil!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    type: "POST",
+                    url: "/Category/Delete/" + id,
+                    success: function (result) {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Başarıyla silinmiştir!',
+                            showConfirmButton: false,
+                            timer: 800
+                        }).then(() => {
+                            location.reload();
+                        })
+
+                    },
+                    error: function (data) {
+                    }
+                });
+            }
+        })
+    }
+    // ===============================
+    function editCategory() {
+        var name = '';
+        Swal.fire({
+            title: 'Kategori adını giriniz!',
+            input: 'text',
+            inputValue: $("#category option:selected").text(),
+            inputAttributes: {
+                autocapitalize: 'off'
+            },
+            showCancelButton: true,
+            cancelButtonText: 'Vazgeç',
+            confirmButtonText: 'Kaydet',
+            showLoaderOnConfirm: true,
+            preConfirm: (login) => {
+                if (login != '') {
+                    name = login;
+                }
+                else {
+                    Swal.showValidationMessage(
+                        `İsim alanı boş bırakılamaz!`
+                    )
+                }
+            },
+            allowOutsideClick: () => !Swal.isLoading()
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    url: '/Category/Edit/',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        'Name': name,
+                        'Id': $("#category").val(),
+                    },
+                    success: function (data) {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Başarıyla güncellenmiştir!',
+                            showConfirmButton: false,
+                            timer: 800
+                        }).then(() => {
+                            location.reload();
+                        })
+                    },
+                    error: function (data) {
+                    }
+                });
+            }
+        })
+    }
+    // ===============================
+    // sub category
+    // ===============================
+    function getSubCategories() {
+        $.ajax({
+            type: "GET",
+            url: "/SubCategory/GetByCategory?categoryId=" + $("#category").val(),
+            success: function (data) {
+                $('#subCategory').empty();
+                for (var i = 0; i < data.subCategories.$values.length; i++) {
+                    var select = document.getElementById("subCategory");
+                    select.appendChild(new Option(data.subCategories.$values[i].name, data.subCategories.$values[i].id));
+                }
+            }
+        });
+    }
+
+    // ===============================
+    function addSubCategory() {
+        var name = '';
+        Swal.fire({
+            title: 'Alt kategori adını giriniz!',
+            input: 'text',
+            inputAttributes: {
+                autocapitalize: 'off'
+            },
+            showCancelButton: true,
+            cancelButtonText: 'Vazgeç',
+            confirmButtonText: 'Ekle',
+            showLoaderOnConfirm: true,
+            preConfirm: (login) => {
+                if (login != '') {
+                    name = login;
+                }
+                else {
+                    Swal.showValidationMessage(
+                        `İsim alanı boş bırakılamaz!`
+                    )
+                }
+            },
+            allowOutsideClick: () => !Swal.isLoading()
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    url: '/SubCategory/Add/',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        'Name': name,
+                        'CategoryId': $("#category").val(),
+                    },
+                    success: function (data) {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Başarıyla eklenmiştir!',
+                            showConfirmButton: false,
+                            timer: 800
+                        }).then(() => {
+                            location.reload();
+                        })
+                    },
+                    error: function (data) {
+                    }
+                });
+            }
+        })
+    }
+    // ===============================
+    function deleteSubCategory() {
+        var id = $("#subCategory").val();
+        Swal.fire({
+            title: 'Silmek istediğinize emin misiniz?',
+            text: "Silme işlemi geri alınamaz! Bu alt kategoriye ait tüm ürünler silinecektir!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            cancelButtonText: 'Vazgeç',
+            confirmButtonText: 'Evet, sil!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    type: "POST",
+                    url: "/SubCategory/Delete/" + id,
+                    success: function (result) {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Başarıyla silinmiştir!',
+                            showConfirmButton: false,
+                            timer: 800
+                        }).then(() => {
+                            location.reload();
+                        })
+
+                    },
+                    error: function (data) {
+                    }
+                });
+            }
+        })
+    }
+    // ===============================
+    function editSubCategory() {
+        var name = '';
+        Swal.fire({
+            title: 'Alt kategori adını giriniz!',
+            input: 'text',
+            inputValue: $("#subCategory option:selected").text(),
+            inputAttributes: {
+                autocapitalize: 'off'
+            },
+            showCancelButton: true,
+            cancelButtonText: 'Vazgeç',
+            confirmButtonText: 'Kaydet',
+            showLoaderOnConfirm: true,
+            preConfirm: (login) => {
+                if (login != '') {
+                    name = login;
+                }
+                else {
+                    Swal.showValidationMessage(
+                        `İsim alanı boş bırakılamaz!`
+                    )
+                }
+            },
+            allowOutsideClick: () => !Swal.isLoading()
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    url: '/SubCategory/Edit/',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        'Name': name,
+                        'Id': $("#subCategory").val(),
+                        'CategoryId': $("#category").val(),
+                    },
+                    success: function (data) {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Başarıyla güncellenmiştir!',
+                            showConfirmButton: false,
+                            timer: 800
+                        }).then(() => {
+                            location.reload();
+                        })
+                    },
+                    error: function (data) {
+                    }
+                });
+            }
+        })
+    }
+    // ===============================
+    // shelf
+    // ===============================
+    function addShelf() {
+        var name = '';
+        Swal.fire({
+            title: 'Raf adını giriniz!',
+            input: 'text',
+            inputAttributes: {
+                autocapitalize: 'off'
+            },
+            showCancelButton: true,
+            cancelButtonText: 'Vazgeç',
+            confirmButtonText: 'Ekle',
+            showLoaderOnConfirm: true,
+            preConfirm: (login) => {
+                if (login != '') {
+                    name = login;
+                }
+                else {
+                    Swal.showValidationMessage(
+                        `İsim alanı boş bırakılamaz!`
+                    )
+                }
+            },
+            allowOutsideClick: () => !Swal.isLoading()
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    url: '/Shelf/Add/',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        'Name': name,
+                    },
+                    success: function (data) {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Başarıyla eklenmiştir!',
+                            showConfirmButton: false,
+                            timer: 800
+                        }).then(() => {
+                            location.reload();
+                        })
+                    },
+                    error: function (data) {
+                    }
+                });
+            }
+        })
+    }
+    // ===============================
+    function getShelf() {
+        $.ajax({
+            type: "GET",
+            url: "/Shelf/GetAll",
+            data: "{}",
+            success: function (data) {
+                var s = '';
+                for (var i = 0; i < data.shelves.$values.length; i++) {
+                    s += '<option value="' + data.shelves.$values[i].id + '">' + data.shelves.$values[i].name + '</option>';
+                }
+                $("#shelf").html(s);
+                getSubShelf();
+            }
+        });
+    }
+    // ===============================
+    function deleteShelf() {
+        var id = $("#shelf").val();
+        Swal.fire({
+            title: 'Silmek istediğinize emin misiniz?',
+            text: "Silme işlemi geri alınamaz! Bu rafa ait tüm raf numaraları silinecektir!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            cancelButtonText: 'Vazgeç',
+            confirmButtonText: 'Evet, sil!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    type: "POST",
+                    url: "/Shelf/Delete/" + id,
+                    success: function (result) {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Başarıyla silinmiştir!',
+                            showConfirmButton: false,
+                            timer: 800
+                        }).then(() => {
+                            location.reload();
+                        })
+
+                    },
+                    error: function (data) {
+                    }
+                });
+            }
+        })
+    }
+    // ===============================
+    function editShelf() {
+        var name = '';
+        Swal.fire({
+            title: 'Raf adını giriniz!',
+            input: 'text',
+            inputValue: $("#shelf option:selected").text(),
+            inputAttributes: {
+                autocapitalize: 'off'
+            },
+            showCancelButton: true,
+            cancelButtonText: 'Vazgeç',
+            confirmButtonText: 'Kaydet',
+            showLoaderOnConfirm: true,
+            preConfirm: (login) => {
+                if (login != '') {
+                    name = login;
+                }
+                else {
+                    Swal.showValidationMessage(
+                        `İsim alanı boş bırakılamaz!`
+                    )
+                }
+            },
+            allowOutsideClick: () => !Swal.isLoading()
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    url: '/Shelf/Edit/',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        'Name': name,
+                        'Id': $("#shelf").val(),
+                    },
+                    success: function (data) {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Başarıyla güncellenmiştir!',
+                            showConfirmButton: false,
+                            timer: 800
+                        }).then(() => {
+                            location.reload();
+                        })
+                    },
+                    error: function (data) {
+                    }
+                });
+            }
+        })
+    }
+    // ===============================
+    // sub shelf
+    // ===============================
+    function getSubShelf() {
+        $.ajax({
+            type: "GET",
+            url: "/SubShelf/GetByShelfId?shelfId=" + $("#shelf").val(),
+            success: function (data) {
+                $('#subShelf').empty();
+                for (var i = 0; i < data.subShelves.$values.length; i++) {
+                    var select = document.getElementById("subShelf");
+                    select.appendChild(new Option(data.subShelves.$values[i].number, data.subShelves.$values[i].id));
+                }
+            }
+        });
+    }
+    // ===============================
+    function addSubShelf() {
+        var name = '';
+        Swal.fire({
+            title: 'Raf numarasını giriniz!',
+            input: 'text',
+            inputAttributes: {
+                autocapitalize: 'off'
+            },
+            showCancelButton: true,
+            cancelButtonText: 'Vazgeç',
+            confirmButtonText: 'Ekle',
+            showLoaderOnConfirm: true,
+            preConfirm: (login) => {
+                if (login != '') {
+                    name = login;
+                }
+                else {
+                    Swal.showValidationMessage(
+                        `İsim alanı boş bırakılamaz!`
+                    )
+                }
+            },
+            allowOutsideClick: () => !Swal.isLoading()
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    url: '/SubShelf/Add/',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        'Number': name,
+                        'ShelfId': $("#shelf").val(),
+                    },
+                    success: function (data) {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Başarıyla eklenmiştir!',
+                            showConfirmButton: false,
+                            timer: 800
+                        }).then(() => {
+                            location.reload();
+                        })
+                    },
+                    error: function (data) {
+                    }
+                });
+            }
+        })
+    }
+    // ===============================
+    function deleteSubShelf() {
+        var id = $("#subShelf").val();
+        Swal.fire({
+            title: 'Silmek istediğinize emin misiniz?',
+            text: "Silme işlemi geri alınamaz! Bu raf numarasına ait tüm ürünler silinecektir!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            cancelButtonText: 'Vazgeç',
+            confirmButtonText: 'Evet, sil!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    type: "POST",
+                    url: "/SubShelf/Delete/" + id,
+                    success: function (result) {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Başarıyla silinmiştir!',
+                            showConfirmButton: false,
+                            timer: 800
+                        }).then(() => {
+                            location.reload();
+                        })
+
+                    },
+                    error: function (data) {
+                    }
+                });
+            }
+        })
+    }
+    // ===============================
+    function editSubShelf() {
+        var name = '';
+        Swal.fire({
+            title: 'Raf numarasını giriniz!',
+            input: 'text',
+            inputValue: $("#subShelf option:selected").text(),
+            inputAttributes: {
+                autocapitalize: 'off'
+            },
+            showCancelButton: true,
+            cancelButtonText: 'Vazgeç',
+            confirmButtonText: 'Kaydet',
+            showLoaderOnConfirm: true,
+            preConfirm: (login) => {
+                if (login != '') {
+                    name = login;
+                }
+                else {
+                    Swal.showValidationMessage(
+                        `İsim alanı boş bırakılamaz!`
+                    )
+                }
+            },
+            allowOutsideClick: () => !Swal.isLoading()
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    url: '/SubShelf/Edit/',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        'Number': name,
+                        'Id': $("#subShelf").val(),
+                        'ShelfId': $("#shelf").val(),
+                    },
+                    success: function (data) {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Başarıyla güncellenmiştir!',
+                            showConfirmButton: false,
+                            timer: 800
+                        }).then(() => {
+                            location.reload();
+                        })
+                    },
+                    error: function (data) {
+                    }
+                });
+            }
+        })
+    }
+    // ===============================
+    // brand
+    // ===============================
+    function addBrand() {
+        var name = '';
+        Swal.fire({
+            title: 'Marka giriniz!',
+            input: 'text',
+            inputAttributes: {
+                autocapitalize: 'off'
+            },
+            showCancelButton: true,
+            cancelButtonText: 'Vazgeç',
+            confirmButtonText: 'Ekle',
+            showLoaderOnConfirm: true,
+            preConfirm: (login) => {
+                if (login != '') {
+                    name = login;
+                }
+                else {
+                    Swal.showValidationMessage(
+                        `İsim alanı boş bırakılamaz!`
+                    )
+                }
+            },
+            allowOutsideClick: () => !Swal.isLoading()
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    url: '/Brand/Add/',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        'Name': name,
+                    },
+                    success: function (data) {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Başarıyla eklenmiştir!',
+                            showConfirmButton: false,
+                            timer: 800
+                        }).then(() => {
+                            location.reload();
+                        })
+                    },
+                    error: function (data) {
+                    }
+                });
+            }
+        })
+    }
+    // ===============================
+    function getBrand() {
+        $.ajax({
+            type: "GET",
+            url: "/Brand/GetAll",
+            data: "{}",
+            success: function (data) {
+                var s = '';
+                for (var i = 0; i < data.brands.$values.length; i++) {
+                    s += '<option value="' + data.brands.$values[i].id + '">' + data.brands.$values[i].name + '</option>';
+                }
+                $("#brand").html(s);
+            }
+        });
+    }
+    // ===============================
+    function deleteBrand() {
+        var id = $("#brand").val();
+        Swal.fire({
+            title: 'Silmek istediğinize emin misiniz?',
+            text: "Silme işlemi geri alınamaz! Bu markaya ait tüm ürünler silinecektir!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            cancelButtonText: 'Vazgeç',
+            confirmButtonText: 'Evet, sil!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    type: "POST",
+                    url: "/Brand/Delete/" + id,
+                    success: function (result) {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Başarıyla silinmiştir!',
+                            showConfirmButton: false,
+                            timer: 800
+                        }).then(() => {
+                            location.reload();
+                        })
+
+                    },
+                    error: function (data) {
+                    }
+                });
+            }
+        })
+    }
+    // ===============================
+    function editBrand() {
+        var name = '';
+        Swal.fire({
+            title: 'Marka giriniz!',
+            input: 'text',
+            inputValue: $("#brand option:selected").text(),
+            inputAttributes: {
+                autocapitalize: 'off'
+            },
+            showCancelButton: true,
+            cancelButtonText: 'Vazgeç',
+            confirmButtonText: 'Kaydet',
+            showLoaderOnConfirm: true,
+            preConfirm: (login) => {
+                if (login != '') {
+                    name = login;
+                }
+                else {
+                    Swal.showValidationMessage(
+                        `İsim alanı boş bırakılamaz!`
+                    )
+                }
+            },
+            allowOutsideClick: () => !Swal.isLoading()
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    url: '/Brand/Edit/',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        'Name': name,
+                        'Id': $("#brand").val(),
+                    },
+                    success: function (data) {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Başarıyla güncellenmiştir!',
+                            showConfirmButton: false,
+                            timer: 800
+                        }).then(() => {
+                            location.reload();
+                        })
+                    },
+                    error: function (data) {
+                    }
+                });
+            }
+        })
+    }
+    // ===============================
+    // currency
+    // ===============================
+    function addCurrency() {
+        var name = '';
+        Swal.fire({
+            title: 'Para birimini giriniz!',
+            input: 'text',
+            inputAttributes: {
+                autocapitalize: 'off'
+            },
+            showCancelButton: true,
+            cancelButtonText: 'Vazgeç',
+            confirmButtonText: 'Ekle',
+            showLoaderOnConfirm: true,
+            preConfirm: (login) => {
+                if (login != '') {
+                    name = login;
+                }
+                else {
+                    Swal.showValidationMessage(
+                        `İsim alanı boş bırakılamaz!`
+                    )
+                }
+            },
+            allowOutsideClick: () => !Swal.isLoading()
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    url: '/Currency/Add/',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        'Name': name,
+                    },
+                    success: function (data) {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Başarıyla eklenmiştir!',
+                            showConfirmButton: false,
+                            timer: 800
+                        }).then(() => {
+                            location.reload();
+                        })
+                    },
+                    error: function (data) {
+                    }
+                });
+            }
+        })
+    }
+    // ===============================
+    function getCurrency() {
+        $.ajax({
+            type: "GET",
+            url: "/Currency/GetAll",
+            data: "{}",
+            success: function (data) {
+                var s = '';
+                for (var i = 0; i < data.currencies.$values.length; i++) {
+                    s += '<option value="' + data.currencies.$values[i].id + '">' + data.currencies.$values[i].name + '</option>';
+                }
+                $("#currency").html(s);
+            }
+        });
+    }
+    // ===============================
+    function deleteCurrency() {
+        var id = $("#currency").val();
+        Swal.fire({
+            title: 'Silmek istediğinize emin misiniz?',
+            text: "Silme işlemi geri alınamaz! Bu para birimine ait tüm ürünler silinecektir!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            cancelButtonText: 'Vazgeç',
+            confirmButtonText: 'Evet, sil!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    type: "POST",
+                    url: "/Currency/Delete/" + id,
+                    success: function (result) {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Başarıyla silinmiştir!',
+                            showConfirmButton: false,
+                            timer: 800
+                        }).then(() => {
+                            location.reload();
+                        })
+
+                    },
+                    error: function (data) {
+                    }
+                });
+            }
+        })
+    }
+    // ===============================
+    function editCurrency() {
+        var name = '';
+        Swal.fire({
+            title: 'Para birimi giriniz!',
+            input: 'text',
+            inputValue: $("#currency option:selected").text(),
+            inputAttributes: {
+                autocapitalize: 'off'
+            },
+            showCancelButton: true,
+            cancelButtonText: 'Vazgeç',
+            confirmButtonText: 'Kaydet',
+            showLoaderOnConfirm: true,
+            preConfirm: (login) => {
+                if (login != '') {
+                    name = login;
+                }
+                else {
+                    Swal.showValidationMessage(
+                        `İsim alanı boş bırakılamaz!`
+                    )
+                }
+            },
+            allowOutsideClick: () => !Swal.isLoading()
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    url: '/Currency/Edit/',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        'Name': name,
+                        'Id': $("#currency").val(),
+                    },
+                    success: function (data) {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Başarıyla güncellenmiştir!',
+                            showConfirmButton: false,
+                            timer: 800
+                        }).then(() => {
+                            location.reload();
+                        })
+                    },
+                    error: function (data) {
+                    }
+                });
+            }
+        })
+    }
+    // ===============================
+    // brand
+    // ===============================
+    function addUnit() {
+        var name = '';
+        Swal.fire({
+            title: 'Birim giriniz!',
+            input: 'text',
+            inputAttributes: {
+                autocapitalize: 'off'
+            },
+            showCancelButton: true,
+            cancelButtonText: 'Vazgeç',
+            confirmButtonText: 'Ekle',
+            showLoaderOnConfirm: true,
+            preConfirm: (login) => {
+                if (login != '') {
+                    name = login;
+                }
+                else {
+                    Swal.showValidationMessage(
+                        `Birim alanı boş bırakılamaz!`
+                    )
+                }
+            },
+            allowOutsideClick: () => !Swal.isLoading()
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    url: '/Unit/Add/',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        'Name': name,
+                    },
+                    success: function (data) {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Başarıyla eklenmiştir!',
+                            showConfirmButton: false,
+                            timer: 800
+                        }).then(() => {
+                            location.reload();
+                        })
+                    },
+                    error: function (data) {
+                    }
+                });
+            }
+        })
+    }
+    // ===============================
+    function getUnit() {
+        $.ajax({
+            type: "GET",
+            url: "/Unit/GetAll",
+            data: "{}",
+            success: function (data) {
+                var s = '';
+                for (var i = 0; i < data.units.$values.length; i++) {
+                    s += '<option value="' + data.units.$values[i].id + '">' + data.units.$values[i].name + '</option>';
+                }
+                $("#unit").html(s);
+            }
+        });
+    }
+    // ===============================
+    function deleteUnit() {
+        var id = $("#unit").val();
+        Swal.fire({
+            title: 'Silmek istediğinize emin misiniz?',
+            text: "Silme işlemi geri alınamaz! Bu birime ait tüm ürünler silinecektir!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            cancelButtonText: 'Vazgeç',
+            confirmButtonText: 'Evet, sil!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    type: "POST",
+                    url: "/Unit/Delete/" + id,
+                    success: function (result) {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Başarıyla silinmiştir!',
+                            showConfirmButton: false,
+                            timer: 800
+                        }).then(() => {
+                            location.reload();
+                        })
+
+                    },
+                    error: function (data) {
+                    }
+                });
+            }
+        })
+    }
+    // ===============================
+    function editUnit() {
+        var name = '';
+        Swal.fire({
+            title: 'Birim giriniz!',
+            input: 'text',
+            inputValue: $("#unit option:selected").text(),
+            inputAttributes: {
+                autocapitalize: 'off'
+            },
+            showCancelButton: true,
+            cancelButtonText: 'Vazgeç',
+            confirmButtonText: 'Kaydet',
+            showLoaderOnConfirm: true,
+            preConfirm: (login) => {
+                if (login != '') {
+                    name = login;
+                }
+                else {
+                    Swal.showValidationMessage(
+                        `Birim alanı boş bırakılamaz!`
+                    )
+                }
+            },
+            allowOutsideClick: () => !Swal.isLoading()
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    url: '/Unit/Edit/',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        'Name': name,
+                        'Id': $("#unit").val(),
+                    },
+                    success: function (data) {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Başarıyla güncellenmiştir!',
+                            showConfirmButton: false,
+                            timer: 800
+                        }).then(() => {
+                            location.reload();
+                        })
+                    },
+                    error: function (data) {
+                    }
+                });
+            }
+        })
+    }
+    // ===============================
+    // ===============================
+    // factory
+    // ===============================
+    function addFactory() {
+        var name = '';
+        Swal.fire({
+            title: 'Fabrika adını giriniz!',
+            input: 'text',
+            inputAttributes: {
+                autocapitalize: 'off'
+            },
+            showCancelButton: true,
+            cancelButtonText: 'Vazgeç',
+            confirmButtonText: 'Ekle',
+            showLoaderOnConfirm: true,
+            preConfirm: (login) => {
+                if (login != '') {
+                    name = login;
+                }
+                else {
+                    Swal.showValidationMessage(
+                        `İsim alanı boş bırakılamaz!`
+                    )
+                }
+            },
+            allowOutsideClick: () => !Swal.isLoading()
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    url: '/Factory/Add/',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        'Name': name,
+                    },
+                    success: function (data) {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Başarıyla eklenmiştir!',
+                            showConfirmButton: false,
+                            timer: 800
+                        }).then(() => {
+                            location.reload();
+                        })
+                    },
+                    error: function (data) {
+                    }
+                });
+            }
+        })
+    }
+
+    // ===============================
+    function getFactories() {
+        $.ajax({
+            type: "GET",
+            url: "/Factory/GetAll",
+            data: "{}",
+            success: function (data) {
+                var s = '';
+                for (var i = 0; i < data.factories.$values.length; i++) {
+                    s += '<option value="' + data.factories.$values[i].id + '">' + data.factories.$values[i].name + '</option>';
+                }
+                $("#factory").html(s);
+                getProjects();
+            }
+        });
+    }
+
+    // ===============================
+    function deleteFactory() {
+        var id = $("#factory").val();
+        console.log(id);
+        Swal.fire({
+            title: 'Silmek istediğinize emin misiniz?',
+            text: "Silme işlemi geri alınamaz! Bu fabrikaya ait tüm projeler silinecektir!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            cancelButtonText: 'Vazgeç',
+            confirmButtonText: 'Evet, sil!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    type: "POST",
+                    url: "/Factory/Delete/" + id,
+                    success: function (result) {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Başarıyla silinmiştir!',
+                            showConfirmButton: false,
+                            timer: 800
+                        }).then(() => {
+                            location.reload();
+                        })
+
+                    },
+                    error: function (data) {
+                    }
+                });
+            }
+        })
+    }
+    // ===============================
+    function editFactory() {
+        var name = '';
+        Swal.fire({
+            title: 'Fabrika adını giriniz!',
+            input: 'text',
+            inputValue: $("#factory option:selected").text(),
+            inputAttributes: {
+                autocapitalize: 'off'
+            },
+            showCancelButton: true,
+            cancelButtonText: 'Vazgeç',
+            confirmButtonText: 'Kaydet',
+            showLoaderOnConfirm: true,
+            preConfirm: (login) => {
+                if (login != '') {
+                    name = login;
+                }
+                else {
+                    Swal.showValidationMessage(
+                        `İsim alanı boş bırakılamaz!`
+                    )
+                }
+            },
+            allowOutsideClick: () => !Swal.isLoading()
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    url: '/Factory/Edit/',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        'Name': name,
+                        'Id': $("#factory").val(),
+                    },
+                    success: function (data) {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Başarıyla güncellenmiştir!',
+                            showConfirmButton: false,
+                            timer: 800
+                        }).then(() => {
+                            location.reload();
+                        })
+                    },
+                    error: function (data) {
+                    }
+                });
+            }
+        })
+    }
+    // ===============================
+    // project
+    // ===============================
+    function getProjects() {
+        $.ajax({
+            type: "GET",
+            url: "/Project/GetByFactoryId?factoryId=" + $("#factory").val(),
+            success: function (data) {
+                $('#project').empty();
+                for (var i = 0; i < data.projects.$values.length; i++) {
+                    var select = document.getElementById("project");
+                    select.appendChild(new Option(data.projects.$values[i].name, data.projects.$values[i].id));
+                }
+            }
+        });
+    }
+
+    // ===============================
+    function addProject() {
+        var name = '';
+        Swal.fire({
+            title: 'Proje adını giriniz!',
+            input: 'text',
+            inputAttributes: {
+                autocapitalize: 'off'
+            },
+            showCancelButton: true,
+            cancelButtonText: 'Vazgeç',
+            confirmButtonText: 'Ekle',
+            showLoaderOnConfirm: true,
+            preConfirm: (login) => {
+                if (login != '') {
+                    name = login;
+                }
+                else {
+                    Swal.showValidationMessage(
+                        `İsim alanı boş bırakılamaz!`
+                    )
+                }
+            },
+            allowOutsideClick: () => !Swal.isLoading()
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    url: '/Project/Add/',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        'Name': name,
+                        'FactoryId': $("#factory").val(),
+                    },
+                    success: function (data) {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Başarıyla eklenmiştir!',
+                            showConfirmButton: false,
+                            timer: 800
+                        }).then(() => {
+                            location.reload();
+                        })
+                    },
+                    error: function (data) {
+                    }
+                });
+            }
+        })
+    }
+    // ===============================
+    function deleteProject() {
+        var id = $("#project").val();
+        Swal.fire({
+            title: 'Silmek istediğinize emin misiniz?',
+            text: "Silme işlemi geri alınamaz! Bu proje silinecektir!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            cancelButtonText: 'Vazgeç',
+            confirmButtonText: 'Evet, sil!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    type: "POST",
+                    url: "/Project/Delete/" + id,
+                    success: function (result) {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Başarıyla silinmiştir!',
+                            showConfirmButton: false,
+                            timer: 800
+                        }).then(() => {
+                            location.reload();
+                        })
+
+                    },
+                    error: function (data) {
+                    }
+                });
+            }
+        })
+    }
+    // ===============================
+    function editProject() {
+        var name = '';
+        Swal.fire({
+            title: 'Proje adını giriniz!',
+            input: 'text',
+            inputValue: $("#project option:selected").text(),
+            inputAttributes: {
+                autocapitalize: 'off'
+            },
+            showCancelButton: true,
+            cancelButtonText: 'Vazgeç',
+            confirmButtonText: 'Kaydet',
+            showLoaderOnConfirm: true,
+            preConfirm: (login) => {
+                if (login != '') {
+                    name = login;
+                }
+                else {
+                    Swal.showValidationMessage(
+                        `İsim alanı boş bırakılamaz!`
+                    )
+                }
+            },
+            allowOutsideClick: () => !Swal.isLoading()
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    url: '/Project/Edit/',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        'Name': name,
+                        'Id': $("#project").val(),
+                        'FactoryId': $("#factory").val(),
+                    },
+                    success: function (data) {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Başarıyla güncellenmiştir!',
+                            showConfirmButton: false,
+                            timer: 800
+                        }).then(() => {
+                            location.reload();
+                        })
+                    },
+                    error: function (data) {
+                    }
+                });
+            }
+        })
+    }
+    // ==================================
+</script>

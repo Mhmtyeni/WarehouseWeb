@@ -1,0 +1,294 @@
+﻿@model ProductDto
+@{
+    Layout = null;
+}
+<div class="modal fade" id="editProductModal" tabindex="-1" role="dialog" aria-labelledby="scrollmodalLabel" aria-hidden="true" style="margin-top: 2%;width:auto; height:auto">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="scrollmodalLabel">Malzeme Düzenleme</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="updateForm">
+                    <div class="card-body">
+                        <br />
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="cc-exp" class="control-label mb-1">Malzeme Tanımı</label>
+                                    <input id="name" class="form-control cc-exp" type="text" required value="@Model.Product.Name">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <label for="x_card_code" class="control-label mb-1">SAP Kodu</label>
+                                <div class="input-group">
+                                    <input id="code" class="form-control cc-exp" type="text" required value="@Model.Product.Code">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="cc-exp" class="control-label mb-1">Stok Adedi</label>
+                                    <input id="stock" class="form-control cc-exp" type="number" required value="@Model.Product.Stock">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <label for="x_card_code" class="control-label mb-1">Kritik Stok Adedi</label>
+                                <div class="input-group">
+                                    <input id="cstock" class="form-control cc-exp" type="number" required value="@Model.Product.CriticalStock">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="cc-exp" class="control-label mb-1">Fiyat</label>
+                                    <input id="price" class="form-control cc-exp" type="number" step="any" required value="@Model.Product.Price">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <label for="cc-exp" class="control-label mb-1">Para Birimi</label>
+                                <select name="select" id="currency" class="form-control" required>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <label for="cc-exp" class="control-label mb-1">Kategori</label>
+                                <select name="select" id="category" class="form-control" required>
+                                </select>
+                            </div>
+                            <div class="col-6">
+                                <label for="cc-exp" class="control-label mb-1">Alt Kategori</label>
+                                <select name="select" id="subCategory" class="form-control" required>
+                                </select>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="cc-exp" class="control-label mb-1">Marka</label>
+                                <select name="select" id="brands" class="form-control" required>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="cc-exp" class="control-label mb-1">Ürün Birimi</label>
+                                <select name="select" id="units" class="form-control" required>
+                                </select>
+                            </div>
+                        </div>
+                        <br />
+                        <center>
+                            <p style="font-weight:bold; font-size:20px">Lokasyon Bilgileri</p>
+                        </center>
+                        <br />
+                        <div class="row">
+                            <div class="col-6">
+                                <label for="cc-exp" class="control-label mb-1">Raf</label>
+                                <select name="select" id="shelf" class="form-control" required>
+                                </select>
+                            </div>
+                            <div class="col-6">
+                                <label for="cc-exp" class="control-label mb-1">Raf Numarası</label>
+                                <select name="select" id="subShelf" class="form-control" required>
+                                </select>
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+                </form>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">İptal</button>
+                    <button id="updateBtn" onclick="updateProduct()" class="btn btn-success">Kaydet</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var bLoad = true;
+    $(document).ready(function () {
+        getBrands(true);
+        getCurrency(true);
+        getCategories(true);
+        getUnits(true);
+        getShelf(true);
+        bLoad = false;
+        $('#category').on("change", function () {
+            getSubCategories();
+        })
+        $('#shelf').on("change", function () {
+            getSubShelf();
+        })
+    });
+    // =====================================================
+    function updateProduct() {
+        if (document.forms['updateForm'].reportValidity()) {
+            document.getElementById("updateBtn").disabled = true;
+         $.ajax({
+                 url: '/Product/Edit/',
+                 type: 'POST',
+                 dataType :'json',
+                 data: {
+                     'Id' : @Model.Product.Id,
+                     'Name': $("#name").val(),
+                     'Code': $("#code").val(),
+                     'Stock': $("#stock").val(),
+                     'CriticalStock': $("#cstock").val(),
+                     'Price': $("#price").val(),
+                     'CurrencyId': $("#currency").val(),
+                     'SubCategoryId': $("#subCategory").val(),
+                     'BrandId': $("#brands").val(),
+                     'UnitId': $("#units").val(),
+                     'SubShelfId': $("#subShelf").val(),
+                     'CreatedDate': '@Model.Product.CreatedDate',
+                     'CreatedByName': '@Model.Product.CreatedByName',
+                },
+             success: function (data) {
+                 Swal.fire({
+                     position: 'center',
+                     icon: 'success',
+                     title: 'Başarıyla kaydedilmiştir!',
+                     showConfirmButton: false,
+                     timer: 800
+                 }).then(() => {
+                     location.reload();
+                 })
+
+                },
+                error: function (data) {
+                    document.getElementById("updateBtn").disabled = false;
+                }
+            });
+        }
+
+    };
+    // =====================================================
+    // get subcategories
+    function getSubCategories(bLoad) {
+        $.ajax({
+            type: "GET",
+            url: "/SubCategory/GetByCategory?categoryId=" + $("#category").val(),
+            success: function (data) {
+                $('#subCategory').empty();
+                for (var i = 0; i < data.subCategories.$values.length; i++) {
+                    var select = document.getElementById("subCategory");
+                    if (@Model.Product.SubCategoryId == data.subCategories.$values[i].id && bLoad)
+                        select.appendChild(new Option(data.subCategories.$values[i].name, data.subCategories.$values[i].id, true, true));
+                    else
+                        select.appendChild(new Option(data.subCategories.$values[i].name, data.subCategories.$values[i].id));
+                }
+            }
+        });
+    }
+      // get unit
+    function getUnits(bLoad) {
+        $.ajax({
+            type: "GET",
+            url: "/Unit/GetAll",
+            success: function (data) {
+                $('#units').empty();
+                for (var i = 0; i < data.units.$values.length; i++) {
+                    var select = document.getElementById("units");
+                    if (@Model.Product.UnitId == data.units.$values[i].id && bLoad)
+                        select.appendChild(new Option(data.units.$values[i].name, data.units.$values[i].id, true, true));
+                    else
+                        select.appendChild(new Option(data.units.$values[i].name, data.units.$values[i].id));
+                }
+            }
+        });
+    }
+    // get subShelf
+    function getSubShelf(bLoad) {
+        $.ajax({
+            type: "GET",
+            url: "/SubShelf/GetByShelfId?shelfId=" + $("#shelf").val(),
+            success: function (data) {
+                $('#subShelf').empty();
+                for (var i = 0; i < data.subShelves.$values.length; i++) {
+                    var select = document.getElementById("subShelf");
+                    if (@Model.Product.SubShelfId == data.subShelves.$values[i].id && bLoad)
+                        select.appendChild(new Option(data.subShelves.$values[i].number, data.subShelves.$values[i].id, true, true));
+                    else
+                        select.appendChild(new Option(data.subShelves.$values[i].number, data.subShelves.$values[i].id));
+                }
+            }
+        });
+    }
+    // get shelf
+    function getShelf(bLoad) {
+        $.ajax({
+            type: "GET",
+            url: "/Shelf/GetAll",
+            success: function (data) {
+                for (var i = 0; i < data.shelves.$values.length; i++) {
+                    var select = document.getElementById("shelf");
+                    if (@Model.Product.SubShelf.ShelfId == data.shelves.$values[i].id && bLoad)
+                        select.appendChild(new Option(data.shelves.$values[i].name, data.shelves.$values[i].id, true, true));
+                    else
+                        select.appendChild(new Option(data.shelves.$values[i].name, data.shelves.$values[i].id));
+                }
+                getSubShelf(bLoad);
+            }
+        });
+    }
+    // get brands
+    function getBrands(bLoad) {
+        $.ajax({
+            type: "GET",
+            url: "/Brand/GetAll",
+            success: function (data) {
+                $('#brands').empty();
+                for (var i = 0; i < data.brands.$values.length; i++) {
+                    var select = document.getElementById("brands");
+                    if (@Model.Product.BrandId == data.brands.$values[i].id && bLoad)
+                        select.appendChild(new Option(data.brands.$values[i].name, data.brands.$values[i].id, true, true));
+                    else
+                        select.appendChild(new Option(data.brands.$values[i].name, data.brands.$values[i].id));
+                }
+            }
+        });
+    }
+    // get categories
+    function getCategories(bLoad) {
+        $.ajax({
+            type: "GET",
+            url: "/Category/GetAll",
+            data: "{}",
+            success: function (data) {
+                var s = '';
+                for (var i = 0; i < data.categories.$values.length; i++) {
+                    var select = document.getElementById("category");
+                    if (@Model.Product.SubCategory.CategoryId == data.categories.$values[i].id && bLoad)
+                        select.appendChild(new Option(data.categories.$values[i].name, data.categories.$values[i].id, true, true));
+                    else
+                        select.appendChild(new Option(data.categories.$values[i].name, data.categories.$values[i].id));
+                }
+                getSubCategories(bLoad);
+            }
+        });
+    }
+    // get currency
+    function getCurrency(bLoad) {
+        $.ajax({
+            type: "GET",
+            url: "/Currency/GetAll",
+            data: "{}",
+            success: function (data) {
+                for (var i = 0; i < data.currencies.$values.length; i++) {
+                    var select = document.getElementById("currency");
+                    if (@Model.Product.CurrencyId == data.currencies.$values[i].id && bLoad)
+                        select.appendChild(new Option(data.currencies.$values[i].name, data.currencies.$values[i].id, true, true));
+                    else
+                        select.appendChild(new Option(data.currencies.$values[i].name, data.currencies.$values[i].id));
+                }
+            }
+        });
+    }
+    // ==========================
+</script>

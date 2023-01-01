@@ -1,0 +1,85 @@
+﻿@model Order
+@{
+    Layout = null;
+}
+<link href="~/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" />
+<style id="table_style" type="text/css">
+    body {
+        font-family: Arial;
+        font-size: 10pt;
+    }
+
+    table {
+        border: 1px;
+        border-color: black;
+        border-collapse: collapse;
+    }
+
+        table th {
+            background-color: #F7F7F7;
+            color: #333;
+            font-weight: bold;
+        }
+
+        table th, table td {
+            padding: 5px;
+            border: 2px solid #000000;
+        }
+</style>
+
+<body>
+    <div id="dvContents" style="border: 3px solid black; padding: 5px,5px,5px,5px; width:420px">
+        <center><h3>BEYAZ EŞYA</h3></center>
+        <center><h3>OPG Ambar</h3></center>
+        <table cellspacing="0" rules="all" border="1" style="width:416px">
+            <thead>
+                <tr>
+                    <th>Ad</th>
+                    <th>Adt</th>
+                    <th>Stok</th>
+                    <th>Konum</th>
+                </tr>
+            </thead>
+
+            @foreach (var item in Model.OrderBaskets)
+            {
+                <tr>
+                    <td> @item.Product.Name</td>
+                    <td><center>@item.Quantity</center></td>
+                    <td><center>@item.Product.Stock</center></td>
+                    <td><center>@item.Product.SubShelf.Shelf.Name - @item.Product.SubShelf.Number</center></td>
+                </tr>
+
+            }
+        </table>
+        <br />
+        <center><h6>Açıklaması: @Model.Note</h6></center>
+        <center><h6 style="font-weight:bold">@Model.AppUser.UserName - @Model.AppUser.FirstName.ToUpper() @Model.AppUser.LastName.ToUpper()</h6></center>
+        <center><h6>@DateTime.Now</h6></center>
+    </div>
+    <br />
+
+</body>
+<script type="text/javascript">
+    function PrintTable() {
+        var printWindow = window.open('', '', 'height=200,width=400');
+        printWindow.document.write('<html><head><title>Table Contents</title>');
+
+        //Print the Table CSS.
+        var table_style = document.getElementById("table_style").innerHTML;
+        printWindow.document.write('<style type = "text/css">');
+        printWindow.document.write(table_style);
+        printWindow.document.write('</style>');
+        printWindow.document.write('</head>');
+
+        //Print the DIV contents i.e. the HTML Table.
+        printWindow.document.write('<body>');
+        var divContents = document.getElementById("dvContents").innerHTML;
+        printWindow.document.write(divContents);
+        printWindow.document.write('</body>');
+
+        printWindow.document.write('</html>');
+        printWindow.document.close();
+        printWindow.print();
+    }
+</script>

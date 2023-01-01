@@ -1,0 +1,150 @@
+﻿@model HomeIndexViewModel
+ <!-- MAIN CONTENT-->
+<div class="main-content">
+    <div class="section__content section__content--p30">
+        <div class="container-fluid">
+            <div class="row">
+                <br />
+            </div>
+            <div class="row m-t-25">
+                <div class="col-sm-6 col-lg-3">
+                    <div class="overview-item overview-item--c1">
+                        <div class="overview__inner">
+                            <div class="overview-box clearfix">
+                                <div class="icon">
+                                    <i class="zmdi zmdi-store"></i>
+                                </div>
+                                <div class="text">
+                                    <h2>%@Model.WarehouseOccupancy</h2>
+                                    <span>Ambar Doluluğu</span>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="bar--outer">
+                                    <div class="bar--inner" style="width:@Model.WarehouseOccupancy%"></div>
+                                </div>
+                            </div>
+                            <div class="overview-chart">
+                                <canvas id="widgetChart1"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="overview-item overview-item--c2">
+                        <div class="overview__inner">
+                            <div class="overview-box clearfix">
+                                <div class="icon">
+                                    <i class="zmdi zmdi-shopping-cart"></i>
+                                </div>
+                                <div class="text">
+                                    <h2>@Model.TotalOrders</h2>
+                                    <span>Toplam Sipariş Sayısı</span>
+                                    <br />
+                                    <span style="color:transparent">a</span>
+                                </div>
+                            </div>
+                            <div class="overview-chart">
+                                <canvas id="widgetChart2"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="overview-item overview-item--c3">
+                        <div class="overview__inner">
+                            <div class="overview-box clearfix">
+                                <div class="icon">
+                                    <i class="zmdi zmdi-label"></i>
+                                </div>
+                                <div class="text">
+                                    <h2>@Model.TotalProducts</h2>
+                                    <span>Toplam Ürün Sayısı</span>
+                                    <br />
+                                    <span style="color:transparent">a</span>
+                                </div>
+                            </div>
+                            <div class="overview-chart">
+                                <canvas id="widgetChart3"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="overview-item overview-item--c4">
+                        <div class="overview__inner">
+                            <div class="overview-box clearfix">
+                                <div class="icon">
+                                    <i class="fas fa-lira-sign"></i>
+                                </div>
+                                <div class="text">
+                                    <h2>@Model.TotalWarehouseValue</h2>
+                                    <span>Ambar Toplam Değeri</span>
+                                    <br />
+                                    <span style="color:transparent">a</span>
+                                </div>
+                            </div>
+                            <div class="overview-chart">
+                                <canvas id="widgetChart4"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                @{ int i = 1; }
+                <div class="col-lg-9">
+                    <h2 class="title-1 m-b-25">En Son Verilen Siparişler</h2>
+                    <div class="table-responsive table--no-card m-b-40">
+                        <table class="table table-borderless table-striped table-earning">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">Sıralama</th>
+                                    <th class="text-center">Sipariş Veren</th>
+                                    <th class="text-center">Açıklama</th>
+                                    <th class="text-center">Tarih</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @for (int j = 0; j < 10; j++)
+                                {
+                                    <tr>
+                                        <td class="text-center">@(i++)</td>
+                                        <td class="text-center">@Model.FirstName[j] @Model.LastName[j] </td>
+                                        <td class="text-center">@Model.Note[j]</td>
+                                        <td class="text-center">@Model.Date[j]</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <h2 class="title-1 m-b-25"style="color:transparent">_</h2>
+                    <div class="au-card au-card--bg-blue au-card-top-countries m-b-40">
+                        <div class="au-card-inner">
+                            <div class="table-responsive">
+                                <table class="table table-top-countries">
+                                    <thead>
+                                        <tr style="color:white;">
+                                            <th class="text-left">En Çok Kullanılan Malzemeler</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @for (int j = 0; j < 10; j++)
+                                        {
+                                            <tr>
+                                                <td class="text-left">@Model.Order[j]</td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END MAIN CONTENT-->

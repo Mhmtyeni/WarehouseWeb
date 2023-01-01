@@ -1,0 +1,86 @@
+﻿<div class="main-content">
+    <div class="section__content section__content--p30">
+        <div class="container-fluid">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-11"></div>
+                    <div class="col-md-1">
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <a id="export" name="export" class="btn btn-block btn-success" style="left:0;">
+                                <span class="fa fa-file-excel fa-lg" style="color:white;"></span> <i style="color:white">Excel</i>
+                            </a>
+                        }
+                    </div>
+                </div>
+            </div>
+            <br />
+            @if (Model.Orders.Count > 0)
+            {
+                int i = 1;
+                <div class="col-lg-12">
+                    <div class="table-responsive table--no-card m-b-40">
+                        <table class="table table-borderless table-striped table-earning">
+                            <thead>
+                                <tr>    
+                                    <th class="text-center">Sıralama</th>
+                                    <th class="text-center">Sipariş Veren</th>
+                                    <th class="text-center">Açıklama</th>
+                                    <th class="text-center">Tarih</th>
+                                    <th class="text-center">Araçlar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.Orders)
+                                {
+                                    <tr>
+                                        <td class="text-center">@(i++)</td>
+                                        <td class="text-center">@item.AppUser.FirstName @item.AppUser.LastName</td>
+                                        <td class="text-center">@item.Note</td>
+                                        <td class="text-center">@item.CreatedDate</td>
+                                        <td class="text-center">
+                                            @if (item.OrderBaskets.Count > 0 || item.OrderBasketLogs.Count > 0)
+                                            {
+                                                <a class="btn btn-primary" onclick="orderDetails(@item.Id)" title="Sipariş Detayı">
+                                                    <i class="zmdi zmdi-storage" style="color:White"></i>
+                                                </a>
+                                            }
+                                            else
+                                            {
+                                                <p>Sipariş İptal!</p>
+                                            }
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <center><i>Sipariş bulunamadı.</i></center>
+            }
+
+        </div>
+    </div>
+</div>
+<div id="orderDetailsModalPage"></div>
+<script>
+    function orderDetails(orderId) {
+        $.ajax({
+            url: '/Order/Details/?Id=' + orderId,
+            success: function (data) {
+                $('#orderDetailsModalPage').html(data);
+                $('#orderDetailsModal').modal('show');
+            }
+        });
+    }
+    $(document).ready(function () {
+          $("#export").click(function () {
+              var url = '@Url.Action("ExportExcel")';
+        window.open(url);
+        });
+      });
+
+</script>

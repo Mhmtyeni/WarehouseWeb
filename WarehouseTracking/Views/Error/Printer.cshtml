@@ -1,0 +1,45 @@
+﻿@{
+Layout= null;
+}
+<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+
+    <j:set var="jvar_alm_asset_id" value="${sysparm_alm_asset}" />
+    <g:include_script src="jsbarcode.jsdbx" />
+
+    <g:evaluate var="sysparm_id">
+        var sysparm_id = RP.getParameterValue("sysparm_id");
+        sysparm_id;
+    </g:evaluate>
+
+    <g:evaluate var="jvar_record" object="true" jelly="true">
+        var gr = new GlideRecord("alm_asset");
+        gr.get(jelly.sysparm_id);
+        gr;
+    </g:evaluate>
+
+    <input type='hidden' name='assetTag' id="assetTag" value="${jvar_record.getDisplayValue('asset_tag')}" />
+    <!-- <input type='hidden' name='serialNO' id="serialNO" value="${jvar_record.getDisplayValue('serial_number')}"	/> -->
+
+    <style>
+        td {
+            font-size: 8px;
+            align: center;
+            vertical-align: top;
+        }
+    </style>
+
+    <table style="width:100% height:100%">
+        <tr><td colspan="2"><svg id="barcode" /></td></tr>
+        <tr>
+            <td>Model: ${jvar_record.getDisplayValue('model')}</td>
+            <td>Serial No: ${jvar_record.getDisplayValue('serial_number')}</td>
+        </tr>
+        <tr><td colspan="2" align="center"><br /><button type="submit" onclick="javascript: window.top.print();"><img src="images/printer.gifx"></img><span>Click to Print</span></button></td></tr>
+    </table>
+
+    <script>
+        window.onload = function () { window.print(); }
+    </script>
+
+</j:jelly>

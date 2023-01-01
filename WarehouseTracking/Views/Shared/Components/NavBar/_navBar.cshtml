@@ -1,0 +1,117 @@
+﻿@model NavBarViewModel
+ <!-- HEADER DESKTOP-->
+<header class="header-desktop">
+    <div class="section__content section__content--p30">
+        <div class="container-fluid">
+            <div class="header-wrap">
+                <form class="form-header" asp-action="Search" asp-controller="Product" method="POST">
+                    <input class="au-input au-input--w300" type="text" name="searchKey" placeholder="Arama" required />
+                    <button class="au-btn--submit" type="submit">
+                        <i class="zmdi zmdi-search"></i>
+                    </button>
+                </form>
+                <div class="header-button">
+                    <div class="noti-wrap">
+                    </div>
+                    @if (User.IsInRole("User"))
+                    {
+                        <div class="account-dropdown__item">
+                            <a href="/Basket/Index">
+                                <i class="zmdi zmdi-shopping-cart"></i>Sepetim
+                            </a>
+                        </div>
+                    }
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <div class="account-dropdown__item">
+                            <a href="/Product/Add" class="btn-success">
+                                <i class="zmdi zmdi-plus" style="color:white"></i><i style=" color:white">Ürün Ekle</i>
+                            </a>
+                        </div>
+                    }
+
+                    <div class="account-wrap">
+                        <div class="account-item clearfix js-item-menu">
+                            @if (User.IsInRole("Admin") && Model.IsOrderExist)
+                            {
+                                <div class="content" style="background-color:red">
+                                    <a class="js-acc-btn" href="#" style="color:white">@Model.AppUser.FirstName  @Model.AppUser.LastName</a>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="content">
+                                    <a class="js-acc-btn" href="#">@Model.AppUser.FirstName  @Model.AppUser.LastName</a>
+                                </div>
+                            }
+
+                            <div class="account-dropdown js-dropdown">
+                                <div class="info clearfix">
+                                    <div class="image">
+                                        <a href="#">
+                                            <i class="fa fa-user-circle fa-4x" style="color:gray"></i>
+                                        </a>
+                                    </div>
+                                    <div class="content">
+                                        <h5 class="name">
+                                            <a href="#">@Model.AppUser.FirstName  @Model.AppUser.LastName</a>
+                                        </h5>
+                                        <span class="email">@Model.AppUser.Email</span>
+                                    </div>
+                                </div>
+                                <div class="account-dropdown__body">
+                                    <div class="account-dropdown__item">
+                                        <a href="/Account/Settings">
+                                            <i class="zmdi zmdi-settings"></i>Ayarlar
+                                        </a>
+                                    </div>
+                                    @if (User.IsInRole("User"))
+                                    {
+                                        <div class="account-dropdown__item">
+                                            <a href="/Order/Index">
+                                                <i class="zmdi zmdi-shopping-cart"></i>Siparişlerim
+                                            </a>
+                                        </div>
+                                    }
+                                    @if (User.IsInRole("Admin"))
+                                    {
+                                        <div class="account-dropdown__item">
+                                            <a href="/Home/Tools">
+                                                <i class="zmdi zmdi-wrench"></i>Araçlar
+                                            </a>
+                                        </div>
+                                        <div class="account-dropdown__item">
+                                            <a href="/Order/Index">
+                                                <i class="zmdi zmdi-shopping-cart"></i>Siparişlerim
+                                            </a>
+                                        </div>
+                                        <div class="account-dropdown__item">
+                                            <a href="/Order/Archive">
+                                                <i class="zmdi zmdi-shopping-cart-plus"></i>Geçmiş Siparişler
+                                            </a>
+                                        </div>
+                                        <div class="account-dropdown__item">
+                                            <a href="/Product/Archive">
+                                                <i class="zmdi zmdi-archive"></i>Silinmiş Ürünler
+                                            </a>
+                                        </div>
+                                    }
+                                    <div class="account-dropdown__item">
+                                        <a href="/Product/CriticalStock">
+                                            <i class="zmdi zmdi-archive"></i>Kritik Stok
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="account-dropdown__footer">
+                                    <a href="/Account/Logout">
+                                        <i class="zmdi zmdi-power"></i>Çıkış Yap
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

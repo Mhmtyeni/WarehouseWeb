@@ -1,0 +1,303 @@
+﻿@model ProductAddDto
+<div class="main-content">
+    <div class="section__content section__content--p30">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <form id="form_id">
+                        <div class="card">
+                            <div class="card-header">Malzeme Ekle</div>
+                            <div class="card-body">
+                                <center>
+                                    <p style="font-weight:bold; font-size:20px">Ürün Bilgileri</p>
+                                </center>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="cc-exp" class="control-label mb-1">Malzeme Tanımı</label>
+                                            <input id="name" class="form-control cc-exp" type="text" required>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-4">
+                                        <label for="x_card_code" class="control-label mb-1">SAP Kodu</label>
+                                        <div class="input-group">
+                                            <input id="code" class="form-control cc-exp" type="text" maxlength="8" minlength="8" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="form-group">
+                                            <label for="cc-exp" class="control-label mb-1">Stok Adedi</label>
+                                            <input id="stock" class="form-control cc-exp" type="number" required value="0">
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <label for="x_card_code" class="control-label mb-1">Kritik Stok Adedi</label>
+                                        <div class="input-group">
+                                            <input id="cstock" class="form-control cc-exp" type="number" required value="0">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="cc-exp" class="control-label mb-1">Fiyat</label>
+                                            <input id="price" class="form-control cc-exp" type="number" step="any" required value="0">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="cc-exp" class="control-label mb-1">Para Birimi</label>
+                                        <select name="select" id="currency" class="form-control" required>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="cc-exp" class="control-label mb-1">Marka</label>
+                                        <input list="brands" id="brandInput" class="form-control" />
+                                        <datalist id="brands" type="text">
+                                        </datalist>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label for="cc-exp" class="control-label mb-1">Kategori</label>
+                                        <input list="category" id="categoryInput" class="form-control" />
+                                        <datalist id="category" type="text">
+                                        </datalist>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="cc-exp" class="control-label mb-1">Alt Kategori</label>
+                                        <input list="subCategory" id="subCategoryInput" class="form-control" />
+                                        <datalist id="subCategory" type="text">
+                                        </datalist>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="cc-exp" class="control-label mb-1">Ürün Birimi</label>
+                                        <input list="units" id="unitInput" class="form-control" />
+                                        <datalist id="units" type="text">
+                                        </datalist>
+                                    </div>
+                                </div>
+                                <br />
+                                <br />
+                                <center>
+                                    <p style="font-weight:bold; font-size:20px">Lokasyon Bilgileri</p>
+                                </center>
+                                <br />
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label for="cc-exp" class="control-label mb-1">Raf</label>
+                                        <input list="shelf" id="shelfInput" class="form-control" />
+                                        <datalist id="shelf" type="text">
+                                        </datalist>
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="cc-exp" class="control-label mb-1">Raf Numarası</label>
+                                        <input list="subShelf" id="subShelfInput" class="form-control" />
+                                        <datalist id="subShelf" type="text">
+                                        </datalist>
+                                    </div>
+                                </div>
+                                <br />
+                                <br />
+                                <div>
+                                    <button id="add" onclick="postData()" type="submit" class="btn btn-lg btn-info btn-block">
+                                        <i class="fa fa-plus fa-lg"></i>&nbsp;
+                                        <span id="add">Ekle</span>
+                                        <span id="add" style="display:none;">Ekleniyor…</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/vendor/jquery-3.2.1.min.js"></script>
+<script>
+    $(document).ready(function () {
+        getBrands();
+        getCurrency();
+        getCategories();
+        getShelf();
+        getUnits();
+        $('#categoryInput').on("change", function () {
+            getSubCategories();
+        })
+        $('#shelfInput').on("change", function () {
+            getSubShelf();
+        })
+    });
+    // =====================================================
+    function postData() {
+        if (document.forms['form_id'].reportValidity()) {
+            document.getElementById("add").disabled = true;
+            $.ajax({
+                url: '@Url.Action("Add", "Product")',
+                type: 'POST',
+                dataType: 'json',
+                data: {
+                    'Name': $("#name").val(),
+                    'Code': $("#code").val(),
+                    'Stock': $("#stock").val(),
+                    'CriticalStock': $("#cstock").val(),
+                    'Price': $("#price").val(),
+                    'CurrencyId': $("#currency").val(),
+                    'SubCategoryId': $("#subCategory option[value='" + $('#subCategoryInput').val() + "']").attr('data-id'),
+                    'BrandId': $("#brands option[value='" + $('#brandInput').val() + "']").attr('data-id'),
+                    'UnitId': $("#units option[value='" + $('#unitInput').val() + "']").attr('data-id'),
+                    'SubShelfId': $("#subShelf option[value='" + $('#subShelfInput').val() + "']").attr('data-id'),
+                },
+                success: function (data) {
+                    if (data == "exist") {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'warning',
+                            title: 'Bu SAP kodu zaten mevcut!',
+                            showConfirmButton: false,
+                            timer: 800
+                        }).then(() => {
+                            document.getElementById("add").disabled = false;
+                        })
+                    }
+                    else {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Başarıyla eklenmiştir!',
+                            showConfirmButton: false,
+                            timer: 800
+                        }).then(() => {
+                            location.href = "/Product/Index/" + $("#subCategory").val();
+                        })
+
+                    }
+
+                },
+                error: function (data) {
+                    document.getElementById("add").disabled = false;
+                }
+            });
+        }
+        else {
+            Swal.fire({
+                position: 'center',
+                icon: 'error',
+                title: 'Tüm bilgileri eksiksiz girdiğinizden emin olunuz!',
+                showConfirmButton: true,
+            });
+        }
+    };
+    // =====================================================
+    // get subcategories
+    function getSubCategories() {
+        $.ajax({
+            type: "GET",
+            url: "/SubCategory/GetByCategory?categoryId=" + $("#category option[value='" + $('#categoryInput').val() + "']").attr('data-id'),
+            success: function (data) {
+                var s = '';
+                for (var i = 0; i < data.subCategories.$values.length; i++) {
+                    s += '<option data-id="' + data.subCategories.$values[i].id + '" value="' + data.subCategories.$values[i].name + '"></option>';
+                }
+                $("#subCategory").html(s);
+            }
+        });
+    }
+    // get subShelf
+    function getSubShelf() {
+        $.ajax({
+            type: "GET",
+            url: "/SubShelf/GetByShelfId?shelfId=" + $("#shelf option[value='" + $('#shelfInput').val() + "']").attr('data-id'),
+            success: function (data) {
+                $('#subShelf').empty();
+                var s = '';
+                for (var i = 0; i < data.subShelves.$values.length; i++) {
+                    s += '<option data-id="' + data.subShelves.$values[i].id + '" value="' + data.subShelves.$values[i].number + '"></option>';
+                }
+                $("#subShelf").html(s);
+
+            }
+        });
+    }
+    // get shelf
+    function getShelf() {
+        $.ajax({
+            type: "GET",
+            url: "/Shelf/GetAll",
+            success: function (data) {
+                var s = '';
+                for (var i = 0; i < data.shelves.$values.length; i++) {
+                    s += '<option data-id="' + data.shelves.$values[i].id + '" value="' + data.shelves.$values[i].name + '"></option>';
+                }
+                $("#shelf").html(s);
+                getSubShelf();
+            }
+        });
+    }
+    // get brands
+    function getBrands() {
+        $.ajax({
+            type: "GET",
+            url: "/Brand/GetAll",
+            success: function (data) {
+                var s = '';
+                for (var i = 0; i < data.brands.$values.length; i++) {
+                    s += '<option data-id="' + data.brands.$values[i].id + '" value="' + data.brands.$values[i].name + '"></option>';
+                }
+                $("#brands").html(s);
+            }
+        });
+    }
+    // get units
+    function getUnits() {
+        $.ajax({
+            type: "GET",
+            url: "/Unit/GetAll",
+            success: function (data) {
+                var s = '';
+                for (var i = 0; i < data.units.$values.length; i++) {
+                    s += '<option data-id="' + data.units.$values[i].id + '" value="' + data.units.$values[i].name + '"></option>';
+                }
+                $("#units").html(s);
+            }
+        });
+    }
+    // get categories
+    function getCategories() {
+        $.ajax({
+            type: "GET",
+            url: "/Category/GetAll",
+            data: "{}",
+            success: function (data) {
+                var s = '';
+                for (var i = 0; i < data.categories.$values.length; i++) {
+                    s += '<option data-id="' + data.categories.$values[i].id + '" value="' + data.categories.$values[i].name + '"></option>';
+                }
+                $("#category").html(s);
+                getSubCategories();
+            }
+        });
+    }
+    // get currency
+    function getCurrency() {
+        $.ajax({
+            type: "GET",
+            url: "/Currency/GetAll",
+            data: "{}",
+            success: function (data) {
+                var s = '';
+                for (var i = 0; i < data.currencies.$values.length; i++) {
+                    s += '<option value="' + data.currencies.$values[i].id + '">' + data.currencies.$values[i].name + '</option>';
+                }
+                $("#currency").html(s);
+            }
+        });
+    }
+    // ==========================
+
+</script>
+

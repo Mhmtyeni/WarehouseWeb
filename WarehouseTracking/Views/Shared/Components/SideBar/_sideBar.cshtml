@@ -1,0 +1,56 @@
+﻿@model CategoryListDto
+<!-- MENU SIDEBAR-->
+<aside class="menu-sidebar d-none d-lg-block">
+    <div class="logo">
+        <i style="font-size:20px">Malzeme Takip</i>
+    </div>
+    <div class="menu-sidebar__content js-scrollbar1">
+        <nav class="navbar-sidebar">
+            <ul class="list-unstyled navbar__list">
+                <li>
+                    <a href="/Home/Index">
+                        <i class="zmdi zmdi-home"></i>Anasayfa
+                    </a>
+                </li>
+                <li>
+                    <a href="/Product/AllProducts">
+                        <i class="zmdi zmdi-dropbox"></i>Tüm Ürünler
+                    </a>
+                </li>
+                @foreach (var item in Model.Categories)
+                {
+                    <li class="has-sub">
+                        <a class="js-arrow" href="#" style="font-size:18px">
+                            <i class="zmdi zmdi-folder-outline"></i>@item.Name
+                        </a>
+                        <ul class="list-unstyled navbar__sub-list js-sub-list">
+                            @foreach (var subCategory in item.SubCategories)
+                            {
+                                <li>
+                                    <a asp-action="Index" asp-controller="Product" asp-route-id="@subCategory.Id">@subCategory.Name</a>
+                                </li>
+                            }
+                        </ul>
+                    </li>
+                }
+
+            </ul>
+        </nav>
+    </div>
+</aside>
+<script src="~/vendor/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(function () {
+            $('.navbar-sidebar li:has(a[href="' + window.location.pathname + '"])').addClass('active');
+            var arrow = $('.navbar-sidebar li.has-sub.active a');
+            arrow.each(function () {
+                var that = $(this);
+                that.toggleClass("open");
+                that.parent().find('.js-sub-list').toggle(500);;
+            });
+        });
+       
+    });
+</script>
+<!-- END MENU SIDEBAR-->
